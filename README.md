@@ -4,29 +4,22 @@
 <a href= "https://www.inteli.edu.br/"><img src="https://www.inteli.edu.br/wp-content/uploads/2021/08/20172028/marca_1-2.png" alt="Inteli - Instituto de Tecnologia e Liderança" border="0"></a>
 </p>
 
-# Nome do Projeto
+# TechSwaps
 
-## Nome do Grupo
+## Desenvolvimento de serviços em Cloud Computing para a Dell
 
 ## Integrantes: 
-<a href="https://www.linkedin.com/in/victorbarq/">Alexandre Souza</a>, 
-<a href="https://www.linkedin.com/in/victorbarq/">Allan Schipper</a>, 
-<a href="https://www.linkedin.com/in/victorbarq/">Erik Freundt</a>, 
-<a href="https://www.linkedin.com/in/victorbarq/">Julia Togni</a>, 
-<a href="https://www.linkedin.com/in/victorbarq/">Livia Coutinho</a>,
-<a href="https://www.linkedin.com/in/victorbarq/">Matheus Santos</a>
+<a href="https://www.linkedin.com/in/alan-rozensztajn-schipper-0563701ba/">Alan Rozensztajn Schipper</br></a>
+<a href="https://www.linkedin.com/in/alexandrefonseca00/">Alexandre Fonseca de Souza</br></a>
+<a href="https://www.linkedin.com/in/erikfreundt/">Erik Bonn Freundt</br></a>
+<a href="https://www.linkedin.com/in/julia-togni/">Julia Rodrigues Togni</br></a> 
+<a href="https://www.linkedin.com/in/liviapcoutinho//">Livia Lopes Coutinho</br></a>
+<a href="https://www.linkedin.com/in/matheusmacedosantos/">Matheus Macedo Santos</br></a>
 
 ## Descrição
 
 📜 Descrição curta sobre o que seu projeto faz.
-<br><br>
-Meu projeto é um exemplo de como utilizar o github.
-<br><br>
-<p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
+(Inserir descrição)
 
 💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
@@ -93,22 +86,7 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://godotengine.org/download">GODOT</a>
 
-## 🗃 Histórico de lançamentos
 
-A cada atualização os detalhes devem ser lançados aqui.
-
-* 0.2.1 - 25/01/2022
-    * MUDANÇA: Atualização de docs (código do módulo permanece inalterado)
-* 0.2.0 - 15/01/2022
-    * MUDANÇA: Remove `setDefaultXYZ()`
-    * ADD: Adiciona `init()`
-* 0.1.1 - 11/01/2022
-    * CONSERTADO: Crash quando chama `baz()` (Obrigado @NomeDoContribuidorGeneroso!)
-* 0.1.0 - 10/01/2022
-    * O primeiro lançamento adequado
-    * MUDANÇA: Renomeia `foo()` para `bar()`
-* 0.0.1 - 01/01/2022
-    * Trabalho em andamento
 
 ## 📋 Licença/License
 
