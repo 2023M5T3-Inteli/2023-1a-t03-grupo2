@@ -86,7 +86,38 @@ Para abrir este projeto você necessita das seguintes ferramentas:
 
 -<a href="https://godotengine.org/download">GODOT</a>
 
+## 🗃 Histórico de lançamentos
 
+**1.0 — 10/02/2023 (Sprint I)**
+
+* Especificação de requisitos, casos de usos
+* Design de Interface do Usuário
+* Arquitetura da solução (Versão 1)
+* Entendimento do negócio
+
+**2.0 — 24/02/2023 (Sprint II)**
+
+* EndPoints em Nuvem
+* Arquitetura da Solução (Versão 2)
+  
+**3.0 — 10/03/2023 (Sprint III)**
+
+* Documentação da API
+* Arquitetura da Solução (Versão 3)
+* Criação de front end para testes de integração com os endpoints
+
+**4.0 — 24/03/2023 (Sprint IV)**
+
+* Conclusão da Integração de Front-end com API
+* Testes finais da API  
+
+**5.0 — 06/04/2023 (Sprint V)**
+
+* Documentação refinada e seções opcionais
+* Código fonte do sistema (Versão Final)
+* Sistema completo construído (Versão Final)
+* Manual do Usuário
+* Apresentação da solução desenvolvida
 
 ## 📋 Licença/License
 
