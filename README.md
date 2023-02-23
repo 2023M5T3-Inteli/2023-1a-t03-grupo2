@@ -19,7 +19,7 @@
 ## Descrição
 
 📜 Descrição curta sobre o que seu projeto faz.
-(Inserir descrição)
+O projeto TechSwaps é uma iniciativa que tem como finalidade realizar a conexão de profissionais de tecnologia que desejam aprender novas habilidades com gestores que disponibilizam oportunidades de projetos temporários em diferentes tecnologias. O TechSwaps é um portal em que as oportunidades ofertadas dentro da Dell estarão centralizadas, permitindo que os funcionários da Dell acessem as vagas livres e obtenham mais informações sobre elas. Com isso, espera-se difundir o aprendizado em diferentes tecnologias e também ajudar na retenção de talentos dentro da empresa, o que reduz o índice de evasão, e ofertando desafios e oportunidades para o aprimoramento de habilidades.
 
 💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
