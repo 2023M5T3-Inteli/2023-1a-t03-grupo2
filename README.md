@@ -61,9 +61,10 @@ Há também 4 pastas que seguem da seguinte forma:
 
 ## 🛠 Instalação
 
-<b>AJustar </b>
+É necessário executar o comando “npm run build”, com isso, todo o código desenvolvido em React é exportado para arquivos em HTML, JavaScript e CSS. Com os arquivos já prontos, é necessário fazer o upload de todos os arquivos em um Bucket,  Amazon S3. 
 
-Ajustar
+Após isso é necessário alterar o permissionamento, adicionando uma licença e deixando aberto para a visualização do público. Assim o site fica publicado no S3, porém apenas o Frontend da aplicação.
+
 
 ## 💻 Configuração para Desenvolvimento
 
