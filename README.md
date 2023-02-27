@@ -23,12 +23,13 @@ O projeto TechSwaps é uma iniciativa que tem como finalidade realizar a conexã
 
 💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
-Meu projeto ajuda estudantes inteli a configurarem seus githubs.
+(inserir)
 <br><br>
-May the force be with you!
 <br><br>
 
 ## 🛠 Estrutura de pastas
+
+(inserir quando as pastas estiverem ajustadas)
 
 -Raiz<br>
 |<br>
@@ -68,9 +69,7 @@ Após isso é necessário alterar o permissionamento, adicionando uma licença e
 
 ## 💻 Configuração para Desenvolvimento
 
-Ajustar.
-
--<a href="https://godotengine.org/download">GODOT</a>
+(inserir)
 
 ## 🗃 Histórico de lançamentos
 
@@ -114,6 +113,8 @@ Ajustar.
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="#">TechSwaps</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="#">Inteli, Alan Rozensztajn Schipper, Alexandre Fonseca de Souza, Erik Bonn Freundt, Julia Rodrigues Togni, Livia Lopes Coutinho, Matheus Macedo Santos</a> is licensed under <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution 4.0 International</a>.</p>
 
 ## 🎓 Referências
+
+(inserir ao final do projeto)
 
 Aqui estão as referências usadas no projeto.
 
