@@ -2,10 +2,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
 
-  getFaq(): string {
-    return "endpoint faq";
-  }
-
   getReconhecimento(): string {
     return "endpoint reconhecimento";
   }
