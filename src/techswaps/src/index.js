@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MeuContainer from './pages/Home';
+import Reconhecimento from './pages/Reconhecimento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MeuContainer></MeuContainer>
+    <Reconhecimento></Reconhecimento>
   </React.StrictMode>
 );
 
