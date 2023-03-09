@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+//import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom'; // <--
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MeuContainer from './pages/Home';
+//import MeuContainer from './pages/Home';
+import MainPage from './pages/FAQ - Page/FaqPage.jsx';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MeuContainer></MeuContainer>
+    <MainPage></MainPage>
+    {/* <FaqPage></FaqPage> */}
   </React.StrictMode>
 );
 
