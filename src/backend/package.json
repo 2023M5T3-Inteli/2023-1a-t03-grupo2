@@ -7,7 +7,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "migrate:run": "npm run typeorm migration:run -- -d ./ormconfig.ts",
+    "migrate:run": "npm run typeorm migration:run -- -d ./ormconfig.js",
     "migrate:create": "typeorm migration:create",
     "typeorm": "typeorm-ts-node-esm",
     "build": "nest build",
@@ -28,6 +28,7 @@
     "@nestjs/config": "^2.3.1",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@prisma/client": "^4.11.0",
     "dotenv": "^16.0.3",
     "mysql2": "^3.2.0",
     "reflect-metadata": "^0.1.13",

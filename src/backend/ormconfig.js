@@ -13,5 +13,4 @@ export const connectionSource = new DataSource({
     migrations: [`./typeorm/migrations/**/*.ts`],
     logging: false,
     synchronize: Boolean(process.env.SYNCHRONIZE_ORM),
-
-})
+});
