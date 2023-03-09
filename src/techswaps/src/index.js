@@ -5,11 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MeuContainer from './pages/Home';
 import Reconhecimento from './pages/Reconhecimento';
+import FormPage from './pages/NewProject/Formpage';
+import Login from './pages/Login/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Reconhecimento></Reconhecimento>
+    <Login></Login>
   </React.StrictMode>
 );
 

@@ -1,45 +1,64 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Button } from '@mui/material';
-import { makeStyles } from '@mui/styles';
+import { Button, Tab, Tabs } from '@mui/material';
 import HomeNavbar from '../../components/Navbar';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '100vh',
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '900px',
-  },
-}));
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
+`;
+
+const Container = styled.div`
+  background-color: #fbfbfb;
+  margin: 2% 15% 0;
+  padding: 48px;
+  position: relative;
+`;
+
+const TabContainer = styled(Tabs)`
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 `;
 
 const OptionButton = styled(Button)`
   && {
     background-color: ${({ selected }) => (selected ? '#007bff' : 'white')};
     color: ${({ selected }) => (selected ? 'white' : '#007bff')};
-    border: 1px solid #E1E1E1;
+    border: 1px solid #e1e1e1;
     border-radius: 2px;
-    margin: 10px;
+    margin: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    width: 456px;
+    height: 176px;
     &:hover {
       background-color: #007bff;
       color: white;
     }
-    width: 456px;
-    height: 176px;
+  }
+`;
+
+const CustomButton = styled(Button)`
+  && {
+    background-color: #0070c9;
+    color: white;
+    padding: 12px 24px;
+    text-transform: capitalize;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    &:hover {
+      background-color: #005ca3;
+    }
   }
 `;
 
@@ -60,8 +79,8 @@ const ShadowProjects = () => {
 };
 
 const Reconhecimento = () => {
-  const classes = useStyles();
   const [showFinishedProjects, setShowFinishedProjects] = useState(true);
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const handleFinishedProjectsClick = () => {
     setShowFinishedProjects(true);
@@ -71,28 +90,50 @@ const Reconhecimento = () => {
     setShowFinishedProjects(false);
   };
 
+  const handleTabChange = (event, newValue) => {
+    setSelectedTab(newValue);
+  };
+
   return (
     <>
-    <HomeNavbar />
-    <MainContainer style={{backgroundColor:'#F5F6F7', marginLeft: '15%', marginRight: '15%', marginTop: '2%'}}>
-      <div className={classes.buttonContainer}>
-        <OptionButton
-          variant="contained"
-          selected={showFinishedProjects}
-          onClick={handleFinishedProjectsClick}
-        >
-          Projetos Finalizados
-        </OptionButton>
-        <OptionButton
-          variant="contained"
-          selected={!showFinishedProjects}
-          onClick={handleShadowProjectsClick}
-        >
-          Projetos Shadow
-        </OptionButton>
-      </div>
-      {showFinishedProjects ? <FinishedProjects /> : <ShadowProjects />}
-    </MainContainer>
+      <HomeNavbar />
+      <MainContainer>
+        <Container>
+          <TabContainer value={selectedTab} onChange={handleTabChange}>
+            <Tab label="Geral" id="tab-0" />
+            <Tab label="Projetos" id="tab-1" />
+            <Tab label="Perfil" id="tab-2" />
+            <Tab label="Reconhecimento" id="tab-3" />
+          </TabContainer>
+          <CustomButton variant="contained">Criar um p</CustomButton>
+          {selectedTab === 0 && (
+            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+              <OptionButton
+                variant="contained"
+                selected={showFinishedProjects}
+                onClick={handleFinishedProjectsClick}
+             
+                >
+                Projetos Finalizados
+              </OptionButton>
+              <OptionButton
+                variant="contained"
+                selected={!showFinishedProjects}
+                onClick={handleShadowProjectsClick}
+              >
+                Projetos Shadow
+              </OptionButton>
+            </div>
+          )}
+
+          {selectedTab === 1 && (
+            <div>
+              <h2>Content for Tab 2</h2>
+            </div>
+          )}
+          {selectedTab === 0 && showFinishedProjects ? <FinishedProjects /> : <ShadowProjects />}
+        </Container>
+      </MainContainer>
     </>
   );
 };
