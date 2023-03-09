@@ -4,15 +4,16 @@ import ReactDOM from 'react-dom'; // <--
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//import MeuContainer from './pages/Home';
-import MainPage from './pages/FAQ - Page/FaqPage.jsx';
-
+import MeuContainer from './pages/Home';
+import Reconhecimento from './pages/Reconhecimento';
+import FormPage from './pages/NewProject/Formpage';
+import Login from './pages/Login/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <MainPage></MainPage>
-    {/* <FaqPage></FaqPage> */}
+    <Login></Login>
   </React.StrictMode>
 );
 
