@@ -1,6 +1,5 @@
 import React from 'react';
-//import ReactDOM from 'react-dom/client';
-import ReactDOM from 'react-dom'; // <--
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,12 +7,21 @@ import MeuContainer from './pages/Home';
 import Reconhecimento from './pages/Reconhecimento';
 import FormPage from './pages/NewProject/Formpage';
 import Login from './pages/Login/Login';
+import Home from './pages/Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MainPage></MainPage>
-    <Login></Login>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="projetos" element={<FormPage />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

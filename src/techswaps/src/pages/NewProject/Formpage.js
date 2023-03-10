@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import HomeNavbar from "../../components/Navbar";
 import "./FormPage.css"; //importando o arquivo CSS para personalização
 
 const FormPage = () => {
@@ -8,6 +9,20 @@ const FormPage = () => {
   const [coOwner, setCoOwner] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const [projeto, setProjeto] = useState([]);
+
+
+  useEffect(() => {
+    fetch('http://localhost:3001/projetoss')
+       .then((response) => response.json())
+       .then((data) => {
+          console.log(data);
+          setProjeto(data);
+       })
+       .catch((err) => {
+          console.log(err.message);
+       });
+ }, []);
 
   const handleAddTag = (event) => {
     event.preventDefault();
@@ -29,8 +44,11 @@ const FormPage = () => {
     setStartDate("");
     setEndDate("");
   };
-
+  console.log(projeto)
   return (
+    <>
+    <HomeNavbar></HomeNavbar>
+    
     <div className="form-container">
       <h1>Novo Projeto</h1>
       <form onSubmit={handleSubmit}>
@@ -104,6 +122,17 @@ const FormPage = () => {
         </button>
       </form>
     </div>
+    {projeto.map((project) => {
+         return (
+          <>
+          <div key={project.id}>
+            <h2>{project.name}</h2>
+            <p >{project.description}</p>
+          </div>
+          </>
+         );
+      })}
+    </>
   );
 };
 

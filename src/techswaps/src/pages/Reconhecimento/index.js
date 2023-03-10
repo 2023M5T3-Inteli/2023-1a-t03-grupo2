@@ -123,14 +123,18 @@ const Reconhecimento = () => {
                 onClick={handleFinishedProjectsClick}
              
                 >
-                Projetos Finalizados
+        <InsideContainer>
+                  <h1>Projetos Finalizados</h1>
+        </InsideContainer>
               </OptionButton>
               <OptionButton
                 variant="contained"
                 selected={!showFinishedProjects}
                 onClick={handleShadowProjectsClick}
               >
-                Projetos Shadow
+          <InsideContainer>
+                  <h1>Projetos Shadow</h1>
+        </InsideContainer>
               </OptionButton>
             </div>
           )}
