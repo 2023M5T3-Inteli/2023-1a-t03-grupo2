@@ -61,6 +61,15 @@ const CustomButton = styled(Button)`
     }
   }
 `;
+const InsideContainer = styled.div`
+    margin-Y: 2%;
+    margin-X: 5%;
+    width: 310px;
+    height: 140px;
+    text-align: center;
+    background-color: ${({ selected }) => (selected ? '#007bff' : 'white')};
+    color: ${({ selected }) => (selected ? 'white' : '#007bff')};
+`;
 
 const FinishedProjects = () => {
   return (
