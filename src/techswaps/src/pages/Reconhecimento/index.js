@@ -42,6 +42,15 @@ const OptionButton = styled(Button)`
     height: 176px;
   }
 `;
+const InsideContainer = styled.div`
+    margin-Y: 2%;
+    margin-X: 5%;
+    width: 310px;
+    height: 140px;
+    text-align: center;
+    background-color: ${({ selected }) => (selected ? '#007bff' : 'white')};
+    color: ${({ selected }) => (selected ? 'white' : '#007bff')};
+`;
 
 const FinishedProjects = () => {
   return (
@@ -81,14 +90,18 @@ const Reconhecimento = () => {
           selected={showFinishedProjects}
           onClick={handleFinishedProjectsClick}
         >
-          Projetos Finalizados
+        <InsideContainer>
+            <h1>Projetos Finalizados</h1>
+        </InsideContainer>
         </OptionButton>
         <OptionButton
           variant="contained"
           selected={!showFinishedProjects}
           onClick={handleShadowProjectsClick}
         >
-          Projetos Shadow
+          <InsideContainer>
+            <h1>Projetos Shadow</h1>
+        </InsideContainer>
         </OptionButton>
       </div>
       {showFinishedProjects ? <FinishedProjects /> : <ShadowProjects />}
