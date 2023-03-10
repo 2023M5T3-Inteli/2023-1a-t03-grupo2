@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MeuContainer from './pages/Home';
+import Home from './pages/Home';
+import AddPerson from './components/AddPersonModal/Modal';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MeuContainer></MeuContainer>
+    <Home/>
   </React.StrictMode>
 );
 
