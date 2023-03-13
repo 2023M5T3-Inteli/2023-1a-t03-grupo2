@@ -9,6 +9,7 @@ import FormPage from './pages/NewProject/Formpage';
 import Login from './pages/Login/Login';
 import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ProjectsPage } from './pages/ProjectsPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +20,8 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route path="projetos" element={<FormPage />} />
+        <Route path="cadastro" element={<FormPage />} />
+        <Route path="projetos" element={<ProjectsPage  />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
