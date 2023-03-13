@@ -1,7 +1,12 @@
 import { Controller, Get, Post, Param, Body, Put, Delete } from "@nestjs/common";
 import { Projeto } from "./projeto/projeto";
 import { ProjectService } from "./projeto/projeto.service";
+import swaggerUi from "swagger-ui-express";
+import { ApiTags } from "@nestjs/swagger/dist";
 
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup)
+
+@ApiTags('Projetos')
 @Controller('projetoss')
 export class ProjectsController{
     constructor(private projectService: ProjectService){
