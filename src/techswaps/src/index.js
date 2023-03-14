@@ -22,6 +22,7 @@ root.render(
         <Route path="login" element={<Login />} />
         <Route path="cadastro" element={<FormPage />} />
         <Route path="projetos" element={<ProjectsPage  />} />
+        <Route path="reconhecimento" element={<Reconhecimento />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
