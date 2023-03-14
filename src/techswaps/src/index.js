@@ -10,6 +10,7 @@ import Login from './pages/Login/Login';
 import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProjectsPage } from './pages/ProjectsPage';
+import MainPage from './pages/FAQ - Page/FaqPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -23,6 +24,7 @@ root.render(
         <Route path="cadastro" element={<FormPage />} />
         <Route path="projetos" element={<ProjectsPage  />} />
         <Route path="reconhecimento" element={<Reconhecimento />} />
+        <Route path="faq" element={<MainPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
