@@ -3,7 +3,6 @@ import { Typography, IconButton, Collapse } from '@mui/material';
 //import { ExpandMore } from '@mui/icons-material';
 import styled from 'styled-components';
 
-
 //personaliza a setinha chevron
 const Chevron = styled.span`
 display: inline-block;
@@ -19,34 +18,6 @@ color: #808080;
   transform: rotate(90deg);
 }
 `
-
-// const Chevron = styled.span`
-//   display: inline-block;
-//   border-right: 4px solid transparent;
-//   border-bottom: 4px solid transparent;
-//   border-left: 4px solid transparent;
-//   border-top: 4px solid black;
-//   width: 10px;
-//   height: 10px;
-//   transform: rotate(-45deg);
-//   color: #000;
-//   transition: all 0.3s ease-in-out;
-//   &:hover {
-//     background-color: #e5e5e5;
-//     border-top-color: #e5e5e5;
-//     transform: rotate(135deg);
-//   }
-// `;
-
-//abaixo
-// const TitleWrapper = styled.div`
-//   border: 2px solid black;
-//   padding: 15px;
-//     //acima a distância do texto da borda
-//   margin-bottom: 15px; 
-//     // acima o espaço entre cada bloco chevron
-// `;
-//acima
 
 //A seta aqui fica acima do título
 // const TitleWrapper = styled.div`
