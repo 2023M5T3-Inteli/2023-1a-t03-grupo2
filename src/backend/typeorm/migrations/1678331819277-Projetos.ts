@@ -14,9 +14,9 @@ export class Projetos1678331819277 implements MigrationInterface {
                     varcharColumn({length: '75'}),
                     charColumn({ name: 'Projetos' ,length: '255'}),
                     intColumn({name: 'First'})
-
                 ]
             }))
+            
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
