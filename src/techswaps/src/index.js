@@ -3,13 +3,27 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import MeuContainer from './pages/Home';
+import Reconhecimento from './pages/Reconhecimento';
+import FormPage from './pages/NewProject/Formpage';
+import Login from './pages/Login/Login';
 import Home from './pages/Home';
-import AddPerson from './components/AddPersonModal/Modal';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ProjectsPage } from './pages/ProjectsPage';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Home/>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="cadastro" element={<FormPage />} />
+        <Route path="projetos" element={<ProjectsPage  />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

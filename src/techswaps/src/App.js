@@ -1,7 +1,6 @@
-import React from 'react';
-import HeroSection from './components/HeroSection/HeroSection';
-import HomeNavbar from './components/Navbar';
-import Home from './pages/Home';
+import HomeNavbar from "./components/Navbar";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import Login from "./pages/Login/Login";
 
 function App() {
 
@@ -9,7 +8,8 @@ function App() {
 
   return (
     <>
-
+      <HomeNavbar />
+      <ProjectsPage />
     </>
   );
 }
