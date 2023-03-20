@@ -3,13 +3,41 @@ import styled from "styled-components";
 import HomeNavbar from "../components/Navbar";
 // import { FaSearch } from "react-icons/fa";
 
+const bkgpage = styled.div`
+    background: #F5F6F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    height: 2300px;
+    position: relative;
+    z-index: 1;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 60px;
+`
+const HeroBg = styled.div`
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+`
+
 const PageContainer = styled.div`
+  background-color: #F5F6F7;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 60%;
   margin: 0 auto;
+  margin-top: 30px;
 `;
 
 const ProjectWrapper = styled.div`
@@ -150,55 +178,57 @@ export const ProjectsPage = () => {
 
   return (
     <>
-    <HomeNavbar></HomeNavbar>
-    <PageContainer>
-      <TitleWrapper>
-        <div>Explore os projetos disponíveis</div>
-      </TitleWrapper>
-      <SearchInput>
-        <input placeholder="Pesquise projetos"></input>
-        {/* <FaSearch /> */}
-        <select placeholder="Filtrar por">
-          <option value="opcao0"></option>
-          <option value="opcao1">React</option>
-          <option value="opcao2">Java</option>
-          <option value="opcao3">UX Design</option>
-        </select>
-      </SearchInput>
-      {projects.map((item) => {
-        return (
-          <>
-            <ProjectWrapper>
-              <ProjectCard
-                title={<Title>{item.title}</Title>}
-                stats={
-                  <Stats
-                    style={{
-                      borderColor:
-                        item.stats === "In progress"
-                          ? "orange"
-                          : item.stats === "Recruiting"
-                          ? "green"
-                          : "red",
-                      color:
-                        item.stats === "In progress"
-                          ? "orange"
-                          : item.stats === "Recruiting"
-                          ? "green"
-                          : "red",
-                    }}
-                  >
-                    {item.stats}
-                  </Stats>
-                }
-                description={<Description>{item.description}</Description>}
-                tag={<Tag>{item.tag}</Tag>}
-              />
-            </ProjectWrapper>
-          </>
-        );
-      })}
-    </PageContainer>
+      <bkgpage>
+        <HomeNavbar></HomeNavbar>
+        <PageContainer>
+          <TitleWrapper>
+            <div>Explore os projetos disponíveis</div>
+          </TitleWrapper>
+          <SearchInput>
+            <input placeholder="Pesquise projetos"></input>
+            {/* <FaSearch /> */}
+            <select placeholder="Filtrar por">
+              <option value="opcao0"></option>
+              <option value="opcao1">React</option>
+              <option value="opcao2">Java</option>
+              <option value="opcao3">UX Design</option>
+            </select>
+          </SearchInput>
+          {projects.map((item) => {
+            return (
+              <>
+                <ProjectWrapper>
+                  <ProjectCard
+                    title={<Title>{item.title}</Title>}
+                    stats={
+                      <Stats
+                        style={{
+                          borderColor:
+                            item.stats === "In progress"
+                              ? "orange"
+                              : item.stats === "Recruiting"
+                                ? "green"
+                                : "red",
+                          color:
+                            item.stats === "In progress"
+                              ? "orange"
+                              : item.stats === "Recruiting"
+                                ? "green"
+                                : "red",
+                        }}
+                      >
+                        {item.stats}
+                      </Stats>
+                    }
+                    description={<Description>{item.description}</Description>}
+                    tag={<Tag>{item.tag}</Tag>}
+                  />
+                </ProjectWrapper>
+              </>
+            );
+          })}
+        </PageContainer>
+      </bkgpage>
     </>
   );
 };
