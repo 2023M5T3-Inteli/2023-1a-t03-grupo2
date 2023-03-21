@@ -1,6 +1,7 @@
 import { ProjectCard } from "../components/ProjectCard";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
+import HomeNavbar from "../components/Navbar";
+// import { FaSearch } from "react-icons/fa";
 
 const PageContainer = styled.div`
   display: flex;
@@ -148,13 +149,15 @@ export const ProjectsPage = () => {
 
 
   return (
+    <>
+    <HomeNavbar></HomeNavbar>
     <PageContainer>
       <TitleWrapper>
         <div>Explore os projetos disponíveis</div>
       </TitleWrapper>
       <SearchInput>
         <input placeholder="Pesquise projetos"></input>
-        <FaSearch />
+        {/* <FaSearch /> */}
         <select placeholder="Filtrar por">
           <option value="opcao0"></option>
           <option value="opcao1">React</option>
@@ -196,5 +199,6 @@ export const ProjectsPage = () => {
         );
       })}
     </PageContainer>
+    </>
   );
 };
