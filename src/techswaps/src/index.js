@@ -8,6 +8,9 @@ import Reconhecimento from './pages/Reconhecimento';
 import FormPage from './pages/NewProject/Formpage';
 import Login from './pages/Login/Login';
 import Home from './pages/Home';
+import ProporProjeto1 from './pages/Propor Projeto - Page/Sub-itens/Propor1';
+import ProporProjeto2 from './pages/Propor Projeto - Page/Sub-itens/Propor2';
+import ProporProjeto3 from './pages/Propor Projeto - Page/Sub-itens/Propor3';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProjectsPage } from './pages/ProjectsPage';
 
@@ -22,6 +25,9 @@ root.render(
         <Route path="login" element={<Login />} />
         <Route path="cadastro" element={<FormPage />} />
         <Route path="projetos" element={<ProjectsPage  />} />
+        <Route path= "projetos1" element={<ProporProjeto1/>}/>
+        <Route path= "projetos2" element={<ProporProjeto2/>}/>
+        <Route path= "projetos3" element={<ProporProjeto3/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
