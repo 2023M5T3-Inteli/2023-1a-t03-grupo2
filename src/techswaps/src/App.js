@@ -1,9 +1,11 @@
-import "./App.css";
-import HeroSection from "./components/HeroSection";
 import HomeNavbar from "./components/Navbar";
 import { ProjectsPage } from "./pages/ProjectsPage";
+import Login from "./pages/Login/Login";
 
 function App() {
+
+
+
   return (
     <>
       <HomeNavbar />

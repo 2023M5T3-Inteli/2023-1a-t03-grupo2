@@ -1,12 +1,17 @@
 
 
 .login-container {
-    background-color: #f2f2f2;
+   
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('./loginpage.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
   }
   
   .title {
@@ -21,6 +26,7 @@
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin: 10%;
   }
   
   .form-label {
@@ -168,3 +174,11 @@
     margin-top: 0.5rem;
     text-decoration: underline;
   }
+
+.imgLogo {
+  margin-bottom: -80px;
+  margin-top: -80px;
+}
+
+
+
