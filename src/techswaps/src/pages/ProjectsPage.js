@@ -1,6 +1,8 @@
 import { ProjectCard } from "../components/ProjectCard";
 import styled from "styled-components";
 import HomeNavbar from "../components/Navbar";
+import axios from "axios";
+import { useState, useEffect } from "react";
 // import { FaSearch } from "react-icons/fa";
 
 const PageContainer = styled.div`
@@ -125,7 +127,12 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
+const baseUrl = "http://localhost:3000/"
+
 export const ProjectsPage = () => {
+
+  const [projetos, setProjeto] = useState(null);
+
   const projects = [
     {
       title: "Lightining",
@@ -147,7 +154,12 @@ export const ProjectsPage = () => {
     },
   ];
 
-
+  useEffect(() => {
+    axios.get(baseUrl + 'projeto').then((response) => {
+      setProjeto(response.data);
+    });
+  }, []);
+  console.log(projetos)
   return (
     <>
     <HomeNavbar></HomeNavbar>
