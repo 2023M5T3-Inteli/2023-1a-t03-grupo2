@@ -127,7 +127,7 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
-const baseUrl = "http://localhost:3000/"
+const baseUrl = "http://localhost:3001/"
 
 export const ProjectsPage = () => {
 
