@@ -2,13 +2,14 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PrismaService } from 'src/prisma/prisma/prisma.service';
+import { IUser } from 'src/interfaces/user.interface';
 
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: PrismaService) {}
 
   @Post('create')
-  create(@Body() createUserDto: CreateUserDto) {
+  create(@Body() createUserDto: IUser) {
     return this.userService.createUser(createUserDto);
   }
 
