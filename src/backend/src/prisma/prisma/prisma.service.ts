@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { IProjeto } from 'src/interfaces/projeto.interface';
+import { ISolicitacao } from 'src/interfaces/solicitacao.interface';
 import { IUser } from 'src/interfaces/user.interface';
+import { IVagas } from 'src/interfaces/vagas.interface';
 
 @Injectable()
 export class PrismaService {
@@ -85,9 +87,11 @@ export class PrismaService {
   return solicitacao
 }
 
-  async createSolicitacao(solicitacaoData){
+  async createSolicitacao(solicitacaoData: ISolicitacao): Promise<ISolicitacao>{
   const newSolicitacao = await this.prisma.solicitationState.create({
-    data: solicitacaoData
+    data: {
+      emailGestor: solicitacaoData.emailGestor
+    }
   })
   return newSolicitacao
 }
@@ -111,9 +115,12 @@ export class PrismaService {
   return vagas
 }
 
-  async createVagas(vagaData){
+  async createVagas(vagaData: IVagas): Promise<IVagas>{
   const newVaga = await this.prisma.vagas.create({
-    data: vagaData
+    data: {
+      tipoVaga: vagaData.tipoVaga,
+      descricao: vagaData.descricao
+    }
   })
   return newVaga
 }

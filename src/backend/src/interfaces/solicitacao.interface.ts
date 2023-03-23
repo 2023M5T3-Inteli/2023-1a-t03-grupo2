@@ -1,4 +1,3 @@
-interface ISolicitacao{
-    id: number;
+export interface ISolicitacao{
     emailGestor: string;
 }
