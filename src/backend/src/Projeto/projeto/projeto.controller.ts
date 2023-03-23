@@ -1,34 +1,40 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { ProjetoService } from './projeto.service';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Res, HttpStatus } from '@nestjs/common';
 import { CreateProjetoDto } from './dto/create-projeto.dto';
 import { UpdateProjetoDto } from './dto/update-projeto.dto';
+import { PrismaService } from 'src/prisma/prisma/prisma.service';
+import { IProjeto } from 'src/interfaces/projeto.interface';
 
 @Controller('projeto')
 export class ProjetoController {
-  constructor(private readonly projetoService: ProjetoService) {}
+  constructor(private readonly projetoService: PrismaService) {}
 
-  @Post()
-  create(@Body() createProjetoDto: CreateProjetoDto) {
-    return this.projetoService.create(createProjetoDto);
+  c
+
+  @Post('criar')
+  async create(@Body() projetoData: IProjeto): Promise<IProjeto> {
+    return this.projetoService.createProjeto(projetoData);
+    // return response.status(HttpStatus.CREATED).json({
+    //   newProjeto
+    // })
   }
 
   @Get()
   findAll() {
-    return this.projetoService.findAll();
+    return this.projetoService.getProjetos();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.projetoService.findOne(+id);
-  }
+  // @Get(':id')
+  // findOne(@Param('id') id: string) {
+  //   return this.projetoService.findOne(+id);
+  // }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateProjetoDto: UpdateProjetoDto) {
-    return this.projetoService.update(+id, updateProjetoDto);
+    return this.projetoService.updateProjeto(+id, updateProjetoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.projetoService.remove(+id);
+    return this.projetoService.deleteProjeto(+id);
   }
 }

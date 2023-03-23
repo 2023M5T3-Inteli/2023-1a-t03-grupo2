@@ -1,5 +1,5 @@
-interface IProjeto{
-    id: number;
+export interface IProjeto{
+    id?: number;
     descricao: string;
     duracao: string;
     emailGestor: string;
