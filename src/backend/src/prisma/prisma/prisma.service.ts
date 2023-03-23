@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { IProjeto } from 'src/interfaces/projeto.interface';
+import { IUser } from 'src/interfaces/user.interface';
 
 @Injectable()
 export class PrismaService {
@@ -17,7 +18,6 @@ export class PrismaService {
 
 
   async createProjeto(data: IProjeto): Promise<IProjeto> {
-    console.log(data)
     try{
     const newProjeto = await this.prisma.projeto.create({
         data: {
@@ -53,11 +53,18 @@ export class PrismaService {
   return users
 }
 
-  async createUser(userData) {
-  const newUser = await this.prisma.user.create({
-    data: userData
+  async createUser(userData: IUser): Promise<IUser> {
+  try{const newUser = await this.prisma.user.create({
+    data: {
+      nome: userData.nome,
+      habilidades: userData.habilidades,
+      areaAtuacao: userData.areaAtuacao
+    }
   })
   return newUser
+}catch(err){
+  console.log(err)
+}
 }
   async updateUser(idFuncionario, userData) {
   const updatedUser = await this.prisma.user.update({
