@@ -1,15 +1,21 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Res, HttpStatus } from '@nestjs/common';
 import { CreateProjetoDto } from './dto/create-projeto.dto';
 import { UpdateProjetoDto } from './dto/update-projeto.dto';
 import { PrismaService } from 'src/prisma/prisma/prisma.service';
+import { IProjeto } from 'src/interfaces/projeto.interface';
 
 @Controller('projeto')
 export class ProjetoController {
   constructor(private readonly projetoService: PrismaService) {}
 
-  @Post()
-  create(@Body() createProjetoDto: CreateProjetoDto) {
-    return this.projetoService.createProjeto(createProjetoDto);
+  c
+
+  @Post('criar')
+  async create(@Body() projetoData: IProjeto): Promise<IProjeto> {
+    return this.projetoService.createProjeto(projetoData);
+    // return response.status(HttpStatus.CREATED).json({
+    //   newProjeto
+    // })
   }
 
   @Get()
