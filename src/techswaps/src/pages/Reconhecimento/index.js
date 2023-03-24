@@ -1,37 +1,37 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { Button, Tab, Tabs } from '@mui/material';
-import HomeNavbar from '../../components/Navbar';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Button, Tab, Tabs } from "@mui/material";
+import HomeNavbar from "../../components/Navbar";
+import MastHead from "../../components/MastHead";
 
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  background-color: #f6f6f6;
+  text-align: center;
 `;
 
 const Container = styled.div`
-  background-color: #fbfbfb;
-  margin: 2% 15% 0;
+  background-color: #fff;
+  margin: 2% auto 0;
   padding: 48px;
   position: relative;
+  max-width: 960px;
 `;
 
-const TabContainer = styled(Tabs)`
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 680px;
+  margin: 0 auto;
 `;
 
 const OptionButton = styled(Button)`
   && {
-    background-color: ${({ selected }) => (selected ? '#007bff' : 'white')};
-    color: ${({ selected }) => (selected ? 'white' : '#007bff')};
+    background-color: ${({ selected }) => (selected ? "#007bff" : "white")};
+    color: ${({ selected }) => (selected ? "white" : "#007bff")};
     border: 1px solid #e1e1e1;
     border-radius: 2px;
     margin: 16px;
@@ -62,13 +62,13 @@ const CustomButton = styled(Button)`
   }
 `;
 const InsideContainer = styled.div`
-    margin-Y: 2%;
-    margin-X: 5%;
-    width: 310px;
-    height: 140px;
-    text-align: center;
-    background-color: ${({ selected }) => (selected ? '#007bff' : 'white')};
-    color: ${({ selected }) => (selected ? 'white' : '#007bff')};
+  margin-y: 2%;
+  margin-x: 5%;
+  width: 310px;
+  height: 140px;
+  text-align: center;
+  background-color: ${({ selected }) => (selected ? "#007bff" : "white")};
+  color: ${({ selected }) => (selected ? "white" : "#007bff")};
 `;
 
 const FinishedProjects = () => {
@@ -105,38 +105,31 @@ const Reconhecimento = () => {
 
   return (
     <>
-      <HomeNavbar />
+<HomeNavbar />
       <MainContainer>
         <Container>
-          <TabContainer value={selectedTab} onChange={handleTabChange}>
-            <Tab label="Geral" id="tab-0" />
-            <Tab label="Projetos" id="tab-1" />
-            <Tab label="Perfil" id="tab-2" />
-            <Tab label="Reconhecimento" id="tab-3" />
-          </TabContainer>
-          <CustomButton variant="contained">Criar um p</CustomButton>
+          <MastHead />
           {selectedTab === 0 && (
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+            <ButtonContainer>
               <OptionButton
                 variant="contained"
                 selected={showFinishedProjects}
                 onClick={handleFinishedProjectsClick}
-             
-                >
-        <InsideContainer>
+              >
+                <InsideContainer>
                   <h1>Projetos Finalizados</h1>
-        </InsideContainer>
+                </InsideContainer>
               </OptionButton>
               <OptionButton
                 variant="contained"
                 selected={!showFinishedProjects}
                 onClick={handleShadowProjectsClick}
               >
-          <InsideContainer>
+                <InsideContainer>
                   <h1>Projetos Shadow</h1>
-        </InsideContainer>
+                </InsideContainer>
               </OptionButton>
-            </div>
+            </ButtonContainer>
           )}
 
           {selectedTab === 1 && (
@@ -144,7 +137,11 @@ const Reconhecimento = () => {
               <h2>Content for Tab 2</h2>
             </div>
           )}
-          {selectedTab === 0 && showFinishedProjects ? <FinishedProjects /> : <ShadowProjects />}
+          {selectedTab === 0 && showFinishedProjects ? (
+            <FinishedProjects />
+          ) : (
+            <ShadowProjects />
+          )}
         </Container>
       </MainContainer>
     </>

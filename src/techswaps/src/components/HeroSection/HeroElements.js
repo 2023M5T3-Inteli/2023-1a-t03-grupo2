@@ -12,11 +12,8 @@ export const HeroContainer = styled.div`
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 5%;
-<<<<<<< HEAD
-=======
     font-family: "Roboto", sans-serif;
     margin-bottom: 60px;
->>>>>>> dd755008d14b395c8f948b1c6db286a126a63a40
 `
 
 export const HeroBg = styled.div`
@@ -30,10 +27,6 @@ export const HeroBg = styled.div`
     overflow: hidden;
 `
 export const homeOne = styled.div`
-<<<<<<< HEAD
-    
-`
-=======
 
 `
 export const img1 = styled.img`
@@ -145,4 +138,3 @@ export const SearchInput = styled.input`
   font-size: 16px;
   width: 300px;
 `;
->>>>>>> dd755008d14b395c8f948b1c6db286a126a63a40
