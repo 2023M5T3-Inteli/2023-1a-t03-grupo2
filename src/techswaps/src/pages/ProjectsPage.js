@@ -187,11 +187,11 @@ export const ProjectsPage = () => {
   ];
 
   useEffect(() => {
-    axios.get(baseUrl + 'projeto').then((response) => {
+    axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
     });
   }, []);
-  console.log(projetos)
+  console.log(projetos);
   return (
     <>
       <HomeNavbar></HomeNavbar>

@@ -48,7 +48,6 @@ const FormPage = () => {
             type="text"
             id="title"
             name="title"
-            className="textSmallInput"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
           />
@@ -57,16 +56,15 @@ const FormPage = () => {
           <textarea
             id="description"
             name="description"
-            className="textFormInput"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
           />
         </div>
         <div className="form-group">
           <label htmlFor="tags">Tags:</label>
-          <form onSubmit={handleAddTag} className="textSmallInput">
-            <input type="text" id="tag" name="tag" className="textSmallInput" />
-            <button type="submit" id="tag" className="buttonAll"> Adicionar Tag</button>
+          <form onSubmit={handleAddTag}>
+            <input type="text" id="tag" name="tag" />
+            <button type="submit" id="tag" > Adicionar Tag</button>
           </form>
           <ul>
             {tags.map((tag) => (
@@ -98,21 +96,19 @@ const FormPage = () => {
         </div>
 
         </div>
-        <div className="textSmallInput">
-          <div className="form-group">
-            <label htmlFor="endDate">Data de Término:</label>
-            <input
-              type="date"
-              id="endDate"
-              name="endDate"
-              value={endDate}
-              onChange={(event) => setEndDate(event.target.value)}
-              />
-          </div>
+        <div className="form-group">
+          <label htmlFor="endDate">Data de Término:</label>
+          <input
+            type="date"
+            id="endDate"
+            name="endDate"
+            value={endDate}
+            onChange={(event) => setEndDate(event.target.value)}
+          />
         </div>
         <button
           type="submit"
-          className="buttonAll"
+          className="btn-submit"
         >
           Adicionar Projeto
         </button>

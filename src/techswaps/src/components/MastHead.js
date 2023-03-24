@@ -32,7 +32,6 @@ const MastheadWrapper = styled(Box)`
 
 export default function Masthead() {
   const [selectedTab, setSelectedTab] = React.useState(0);
-  const [buttonPopup, setButtonPopup] = React.useState(false);
 
 
   const handleTabChange = (event, newValue) => {
@@ -40,7 +39,6 @@ export default function Masthead() {
   };
 
   return (
-    <>
     <AppBar position="margin-top: 50px;" sx={{maxWidth: '990px', margin: '0 auto', backgroundColor: 'transparent' }}>
       <MastheadWrapper>
         <Toolbar>
@@ -50,11 +48,9 @@ export default function Masthead() {
             <Tab label="Profile" id="tab-2" />
             <Tab label="Recognition" id="tab-3" />
           </TabContainer>
-          <CustomButton variant="contained" >Create project</CustomButton>
+          <CustomButton variant="contained">Create project</CustomButton>
         </Toolbar>
       </MastheadWrapper>
     </AppBar>
-    
-    </>
   );
 }
