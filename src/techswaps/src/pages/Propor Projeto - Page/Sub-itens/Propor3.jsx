@@ -6,7 +6,7 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
 import { TextField } from '@mui/material';
-import '@fontsource/roboto/300.css';
+// import '@fontsource/roboto/300.css';
 import ProporProjeto2 from './Propor2'; //import para o redirect para a próxima página
 import { Button } from '@mui/material';
 
