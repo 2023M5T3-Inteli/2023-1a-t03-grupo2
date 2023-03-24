@@ -150,8 +150,8 @@
   }
   
   .cancel-button {
-    background-color: #fff;
-    color: #0070c9;
+    background-color: #ccc;
+    color: #fff;
     border: none;
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
