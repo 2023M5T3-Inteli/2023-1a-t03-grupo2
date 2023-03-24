@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import Logo from "./techswapsblue.png";
+import Logo from "./../Login/techswaps.png";
 import HomeNavbar from "../../components/Navbar";
 
 function Login() {
