@@ -47,17 +47,17 @@ const FormPage = () => {
   console.log(projeto)
   return (
     <>
-    <HomeNavbar></HomeNavbar>
+
     
-    <div className="form-container">
-      <h1>Novo Projeto</h1>
+      <h1>Create a new project</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label htmlFor="title">Título do Projeto:</label>
+          <label className="titleForm" htmlFor="title">Title of the project:</label>
           <input
             type="text"
             id="title"
             name="title"
+            className="textSmallInput"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
           />
@@ -67,15 +67,16 @@ const FormPage = () => {
           <textarea
             id="description"
             name="description"
+            className="textFormInput"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
           />
         </div>
         <div className="form-group">
           <label htmlFor="tags">Tags:</label>
-          <form onSubmit={handleAddTag}>
-            <input type="text" id="tag" name="tag" />
-            <button type="submit" id="tag" > Adicionar Tag</button>
+          <form onSubmit={handleAddTag} className="textSmallInput">
+            <input type="text" id="tag" name="tag" className="textSmallInput" />
+            <button type="submit" id="tag" className="buttonAll"> Adicionar Tag</button>
           </form>
           <ul>
             {tags.map((tag) => (
@@ -89,39 +90,44 @@ const FormPage = () => {
             type="text"
             id="coOwner"
             name="coOwner"
+            className="textSmallInput"
             value={coOwner}
             onChange={(event) => setCoOwner(event.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="startDate">Data de Início:</label>
-          <input
-            type="date"
-            id="startDate"
-            name="startDate"
-            value={startDate}
-            onChange={(event) => setStartDate(event.target.value)}
-          />
+        <div className="textSmallInput">
+          <div className="form-group">
+            <label htmlFor="startDate">Data de Início:</label>
+            <input
+              type="date"
+              id="startDate"
+              name="startDate"
+              value={startDate}
+              onChange={(event) => setStartDate(event.target.value)}
+              />
+        </div>
 
         </div>
-        <div className="form-group">
-          <label htmlFor="endDate">Data de Término:</label>
-          <input
-            type="date"
-            id="endDate"
-            name="endDate"
-            value={endDate}
-            onChange={(event) => setEndDate(event.target.value)}
-          />
+        <div className="textSmallInput">
+          <div className="form-group">
+            <label htmlFor="endDate">Data de Término:</label>
+            <input
+              type="date"
+              id="endDate"
+              name="endDate"
+              value={endDate}
+              onChange={(event) => setEndDate(event.target.value)}
+              />
+          </div>
         </div>
         <button
           type="submit"
-          className="btn-submit"
+          className="buttonAll"
         >
           Adicionar Projeto
         </button>
       </form>
-    </div>
+
     {projeto.map((project) => {
          return (
           <>
