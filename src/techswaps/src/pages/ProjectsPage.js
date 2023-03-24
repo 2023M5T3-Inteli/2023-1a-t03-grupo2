@@ -3,9 +3,10 @@ import styled from "styled-components";
 import HomeNavbar from "../components/Navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Popup from "../components/Popup/PopUpCreateProject";
+import FormPage from "./NewProject/Formpage";
 import SearchIcon from "@mui/icons-material/Search";
 import MastHead from "../components/MastHead";
-import { Icon } from "@mui/material";
 
 const PageContainer = styled.div`
   display: flex;
@@ -121,6 +122,20 @@ const Stats = styled.h3`
     color: red;
   `}
 `;
+const StyledButton = styled.button`
+  background-color: #0672CB;
+  border-radius: 2px;
+  color: #FFFFFF;
+  padding: 10px 30px;
+  border: none;
+  text-align: center;
+  width: auto;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+`;
 
 const Description = styled.div`
   font-size: 0.8rem;
@@ -147,6 +162,8 @@ const baseUrl = "http://localhost:3001/";
 
 export const ProjectsPage = () => {
   const [projetos, setProjeto] = useState(null);
+  const [buttonPopup, setButtonPopup] = useState(false);
+
 
   const projects = [
     {
@@ -178,23 +195,22 @@ export const ProjectsPage = () => {
   return (
     <>
       <HomeNavbar></HomeNavbar>
-      <div style={{ backgroundColor: "#F5F6F7", padding: "40px", marginLeft:""}}>
         <PageContainer>
-          
           <MastHead />
           <TitleWrapper>
             <div>Explore os projetos disponíveis</div>
           </TitleWrapper>
           <SearchInput>
-            <input placeholder="Pesquise por projetos"></input>
+            <input placeholder="Pesquise projetos"></input>
             <SearchIcon />
-            <select>
-              <option value="">Filtrar por</option>
+            <select placeholder="Filtrar por">
+              <option value="opcao0"></option>
               <option value="opcao1">React</option>
               <option value="opcao2">Java</option>
               <option value="opcao3">UX Design</option>
             </select>
           </SearchInput>
+          <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
           {projects.map((item) => {
             return (
               <>
@@ -226,10 +242,12 @@ export const ProjectsPage = () => {
                   />
                 </ProjectWrapper>
               </>
-            );
-          })}
-        </PageContainer>
-      </div>
+          );
+        })}
+      </PageContainer>
+    <Popup trigger={buttonPopup}>
+        <FormPage></FormPage>
+    </Popup>
     </>
   );
 };
