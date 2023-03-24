@@ -5,20 +5,21 @@ import HomeNavbar from "../../components/Navbar";
 import MastHead from "../../components/MastHead";
 
 const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f6f6f6;
-  text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #f6f6f6;
+text-align: center;
+min-height: 100vh;
 `;
 
 const Container = styled.div`
+  margin-top: 20px;
   background-color: #fff;
-  margin: 2% auto 0;
-  padding: 48px;
   position: relative;
-  max-width: 960px;
+  max-width: 1000px;
+  min-height: 90vh;
 `;
 
 const ButtonContainer = styled.div`
@@ -26,6 +27,7 @@ const ButtonContainer = styled.div`
   justify-content: space-between;
   max-width: 680px;
   margin: 0 auto;
+  margin-top: 100px;
 `;
 
 const OptionButton = styled(Button)`
@@ -34,8 +36,7 @@ const OptionButton = styled(Button)`
     color: ${({ selected }) => (selected ? "white" : "#007bff")};
     border: 1px solid #e1e1e1;
     border-radius: 2px;
-    margin: 16px;
-    padding: 24px;
+    margin: 26px;
     text-align: center;
     transition: background-color 0.2s ease;
     width: 456px;
@@ -52,7 +53,6 @@ const CustomButton = styled(Button)`
     background-color: #0070c9;
     color: white;
     padding: 12px 24px;
-    text-transform: capitalize;
     position: absolute;
     top: 16px;
     right: 16px;
@@ -67,8 +67,7 @@ const InsideContainer = styled.div`
   width: 310px;
   height: 140px;
   text-align: center;
-  background-color: ${({ selected }) => (selected ? "#007bff" : "white")};
-  color: ${({ selected }) => (selected ? "white" : "#007bff")};
+
 `;
 
 const FinishedProjects = () => {
@@ -115,6 +114,7 @@ const Reconhecimento = () => {
                 variant="contained"
                 selected={showFinishedProjects}
                 onClick={handleFinishedProjectsClick}
+                sx={{backgroundColor: 'transparent' }}
               >
                 <InsideContainer>
                   <h1>Projetos Finalizados</h1>
@@ -124,6 +124,7 @@ const Reconhecimento = () => {
                 variant="contained"
                 selected={!showFinishedProjects}
                 onClick={handleShadowProjectsClick}
+                sx={{backgroundColor: 'transparent' }}
               >
                 <InsideContainer>
                   <h1>Projetos Shadow</h1>
