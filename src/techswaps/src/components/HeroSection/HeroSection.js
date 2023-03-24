@@ -11,11 +11,12 @@ import Modal from '../AddPersonModal/Modal';
 
 
 
+
 //modal que nao esta funcionando   
 const HeroSection = () => {
     const [isOpen, setOpen] = useState(false)
     //console.log("isOpen", isOpen)
- //final do modal que nao esta funcionando
+    //final do modal que nao esta funcionando
 
 
 
@@ -68,10 +69,11 @@ const HeroSection = () => {
 
 
 
-        </HeroBg>
-    </HeroContainer>
 
-)
+            </HeroBg>
+        </HeroContainer>
+
+    )
 }
 
 
