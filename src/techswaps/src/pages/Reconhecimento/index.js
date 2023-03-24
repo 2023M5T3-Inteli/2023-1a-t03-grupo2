@@ -15,7 +15,6 @@ min-height: 100vh;
 `;
 
 const Container = styled.div`
-  margin-top: 20px;
   background-color: #fff;
   position: relative;
   max-width: 1000px;
@@ -37,10 +36,10 @@ const OptionButton = styled(Button)`
     border: 1px solid #e1e1e1;
     border-radius: 2px;
     margin: 26px;
-    text-align: center;
     transition: background-color 0.2s ease;
     width: 456px;
     height: 176px;
+    text-transform: none;
     &:hover {
       background-color: #007bff;
       color: white;
@@ -64,9 +63,8 @@ const CustomButton = styled(Button)`
 const InsideContainer = styled.div`
   margin-y: 2%;
   margin-x: 5%;
-  width: 310px;
+  width: 330px;
   height: 140px;
-  text-align: center;
 
 `;
 
