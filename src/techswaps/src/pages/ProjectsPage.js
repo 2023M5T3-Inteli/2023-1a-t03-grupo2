@@ -3,9 +3,9 @@ import styled from "styled-components";
 import HomeNavbar from "../components/Navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Popup from "../components/Popup/PopUpCreateProject";
-import FormPage from "./NewProject/Formpage";
-// import { FaSearch } from "react-icons/fa";
+import SearchIcon from "@mui/icons-material/Search";
+import MastHead from "../components/MastHead";
+import { Icon } from "@mui/material";
 
 const PageContainer = styled.div`
   display: flex;
@@ -122,22 +122,6 @@ const Stats = styled.h3`
   `}
 `;
 
-
-const StyledButton = styled.button`
-  background-color: #0672CB;
-  border-radius: 2px;
-  color: #FFFFFF;
-  padding: 10px 30px;
-  border: none;
-  text-align: center;
-  width: auto;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-`;
-
 const Description = styled.div`
   font-size: 0.8rem;
   margin-left: 10px;
@@ -185,37 +169,35 @@ export const ProjectsPage = () => {
     },
   ];
 
-  const [buttonPopup, setButtonPopup] = useState(false);
-
-
   useEffect(() => {
-    axios.get(baseUrl + 'projeto').then((response) => {
+    axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
     });
   }, []);
-  console.log(projetos)
+  console.log(projetos);
   return (
     <>
       <HomeNavbar></HomeNavbar>
-      <PageContainer>
-        <TitleWrapper>
-          <div>Explore os projetos disponíveis</div>
-        </TitleWrapper>
-        <SearchInput>
-
-          <input placeholder="Pesquise projetos"></input>
-          {/* <FaSearch /> */}
-          <select placeholder="Filtrar por">
-            <option value="opcao0"></option>
-            <option value="opcao1">React</option>
-            <option value="opcao2">Java</option>
-            <option value="opcao3">UX Design</option>
-          </select>
-        </SearchInput>
-        <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
-        {projects.map((item) => {
-          return (
-            <>
+      <div style={{ backgroundColor: "#F5F6F7", padding: "40px", marginLeft:""}}>
+        <PageContainer>
+          
+          <MastHead />
+          <TitleWrapper>
+            <div>Explore os projetos disponíveis</div>
+          </TitleWrapper>
+          <SearchInput>
+            <input placeholder="Pesquise por projetos"></input>
+            <SearchIcon />
+            <select>
+              <option value="">Filtrar por</option>
+              <option value="opcao1">React</option>
+              <option value="opcao2">Java</option>
+              <option value="opcao3">UX Design</option>
+            </select>
+          </SearchInput>
+          {projects.map((item) => {
+            return (
+              <>
                 <ProjectWrapper>
                   <ProjectCard
                     title={<Title>{item.title}</Title>}
@@ -226,14 +208,14 @@ export const ProjectsPage = () => {
                             item.stats === "In progress"
                               ? "orange"
                               : item.stats === "Recruiting"
-                                ? "green"
-                                : "red",
+                              ? "green"
+                              : "red",
                           color:
                             item.stats === "In progress"
                               ? "orange"
                               : item.stats === "Recruiting"
-                                ? "green"
-                                : "red",
+                              ? "green"
+                              : "red",
                         }}
                       >
                         {item.stats}
@@ -243,15 +225,11 @@ export const ProjectsPage = () => {
                     tag={<Tag>{item.tag}</Tag>}
                   />
                 </ProjectWrapper>
-            </>
-          );
-        })}
-      </PageContainer>
-    <Popup trigger={buttonPopup}>
-        <FormPage></FormPage>
-    </Popup>
-
+              </>
+            );
+          })}
+        </PageContainer>
+      </div>
     </>
-
   );
 };

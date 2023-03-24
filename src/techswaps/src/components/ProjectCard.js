@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const projectCard = styled.div`
+export const projectCard = styled.div`
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
   width: 400px;
@@ -11,34 +11,18 @@ const projectCard = styled.div`
   z-index: 0;
   overflow: hidden;
   transition: 0.6s ease-in;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
 `;
-
-const titleCard = styled.p`
-`;
-
-const LeftColumn = styled.div`
-`;
-
-const RightColumn = styled.div`
-`;
-
 
 export const ProjectCard = ({ title, stats, description, tag }) => {
   return (
     <>
       <projectCard>
-        <div>
-          <LeftColumn>
+          <div>
             <p className="font-size: 1em ">{title}</p>
-            <p>{description}</p>
-          </LeftColumn>
-          <RightColumn>
             <p>{stats}</p>
+            <p>{description}</p>
             <p>{tag}</p>
-          </RightColumn>
-        </div>
+          </div>
       </projectCard>
     </>
   );
