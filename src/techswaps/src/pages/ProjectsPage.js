@@ -14,14 +14,13 @@ const PageContainer = styled.div`
   align-items: center;
   width: 60%;
   margin: 0 auto;
-  background-color: #fff;
 `;
 
 const ProjectWrapper = styled.div`
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
   height: 180px;
-  background-color: #fff;
+  background-color: #ffffff;
   position: relative;
   z-index: 0;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -32,11 +31,11 @@ const ProjectWrapper = styled.div`
   padding: 10px;
   display: flex;
   margin-top: 15px;
-  width: 700px;
+  width: 80%;
 `;
 
 const TitleWrapper = styled.div`
-  margin-top: 80px;
+  margin-top: 40px;
   margin-bottom: 40px;
   padding: 10px;
   text-align: left;
@@ -46,44 +45,33 @@ const TitleWrapper = styled.div`
 const SearchInput = styled.div`
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 60%;
   height: 50px;
   border-radius: 10px;
   position: relative;
 
   input {
     width: 70%;
-    border: 2px solid #cccccc;
+    border: 2px solid #7e7e7e;
     padding: 10px;
     outline: none;
     font-size: 0.8rem;
-    cursor: pointer;
   }
 
   svg {
     color: white;
     background-color: rgba(6, 114, 203, 1);
-    padding: 7px;
-    cursor: pointer;
+    padding: 11.5px;
   }
 
   select {
-    width: 60%;
+    width: 30%;
     padding: 10px;
-    font-size: 0.8rem;
-    color: #999999;
-    border: 2px solid #cccccc;
-    background-color: transparent;
-    margin-left: 40px;
-    cursor: pointer;
-  }
-
-  select:hover {
-    cursor: pointer;
-  }
-
-  select:focus {
+    border: 2px solid #7e7e7e;
     outline: none;
+    background-color: #fff;
+    font-size: 0.8rem;
+    margin-left: 10px;
   }
 `;
 
@@ -141,11 +129,10 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
-
-
-const baseUrl = "http://localhost:3001/";
+const baseUrl = "http://localhost:3001/"
 
 export const ProjectsPage = () => {
+
   const [projetos, setProjeto] = useState(null);
 
   const projects = [
