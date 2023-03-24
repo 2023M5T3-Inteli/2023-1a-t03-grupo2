@@ -117,6 +117,7 @@
   .form-container form > div > form > button[type="submit"]:active {
     background-color: #002c50;
   }
+<<<<<<< HEAD
   
 
 .titleForm {
@@ -151,3 +152,6 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+=======
+  
+>>>>>>> parent of 8928469a (Merge pull request #23 from 2023M5T3-Inteli/julia-branch)

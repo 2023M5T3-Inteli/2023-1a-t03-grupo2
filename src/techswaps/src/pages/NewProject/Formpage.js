@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeNavbar from "../../components/Navbar";
-//import "./FormPage.css"; //importando o arquivo CSS para personalização
+import "./FormPage.css"; //importando o arquivo CSS para personalização
 
 const FormPage = () => {
   const [title, setTitle] = useState("");
