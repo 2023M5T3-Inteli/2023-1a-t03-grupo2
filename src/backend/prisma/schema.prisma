@@ -1,3 +1,4 @@
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,8 +8,28 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model migrations {
-  id        Int    @id @default(autoincrement())
-  timestamp BigInt
-  name      String @db.VarChar(255)
+model estadodesolicitacao {
+  id      Int      @id @default(autoincrement())
+  emailGestor   String   @unique
+}
+
+model Projeto {
+  id      Int      @id @default(autoincrement())
+  nome    String
+  duracao String
+  descricao String
+  emailGestor String
+}
+
+model User{
+  idFuncionario      Int      @id @default(autoincrement())
+  nome String?
+  habilidades String
+  areaAtuacao String
+}
+
+model Vagas {
+  id  Int @id @default(autoincrement())
+  tipoVaga String
+  descricao String
 }

@@ -5,6 +5,8 @@
 </p>
 
 # TechSwaps
+<p align="center">
+<a><img src="https://user-images.githubusercontent.com/99190451/226711680-84147b2e-61e7-4aa5-8e63-27e5d9d5634e.png" alt="Logo TechSwaps" border="0"></a>
 
 ## Desenvolvimento de serviços em Cloud Computing para a Dell
 

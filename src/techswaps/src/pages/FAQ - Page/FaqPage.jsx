@@ -1,4 +1,5 @@
 //Página de renderização dos componentes
+
 import Heading from './Sub-itens/Heading.jsx';
 import SearchBar from './Sub-itens/SearchBar.jsx';
 import Chevron from './Sub-itens/Chevron.jsx';
@@ -10,15 +11,11 @@ function MainPage() {
       <>
       <HeroContainer>
         <HeroBg>          
-          <Heading></Heading>
-          {/* Tente quebrar a linha, dando espaço entre o título e a barra de pesquisa */}
+          <Heading></Heading> 
           <SearchBar></SearchBar>
-          <Chevron></Chevron>         
-          
-        </HeroBg>
-            
+          <Chevron></Chevron>                 
+        </HeroBg>            
       </HeroContainer>
-
       </>    
     )
   }
