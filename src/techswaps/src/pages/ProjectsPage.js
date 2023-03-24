@@ -8,6 +8,7 @@ import MastHead from "../components/MastHead";
 import { Icon } from "@mui/material";
 
 const PageContainer = styled.div`
+  background-color: #F5F6F7;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +16,7 @@ const PageContainer = styled.div`
   width: 60%;
   margin: 0 auto;
   background-color: #fff;
+  margin-top: 30px;
 `;
 
 const ProjectWrapper = styled.div`
@@ -169,6 +171,9 @@ export const ProjectsPage = () => {
     },
   ];
 
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+
   useEffect(() => {
     axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
@@ -178,26 +183,25 @@ export const ProjectsPage = () => {
   return (
     <>
       <HomeNavbar></HomeNavbar>
-      <div style={{ backgroundColor: "#F5F6F7", padding: "40px", marginLeft:""}}>
-        <PageContainer>
-          
-          <MastHead />
-          <TitleWrapper>
-            <div>Explore os projetos disponíveis</div>
-          </TitleWrapper>
-          <SearchInput>
-            <input placeholder="Pesquise por projetos"></input>
-            <SearchIcon />
-            <select>
-              <option value="">Filtrar por</option>
-              <option value="opcao1">React</option>
-              <option value="opcao2">Java</option>
-              <option value="opcao3">UX Design</option>
-            </select>
-          </SearchInput>
-          {projects.map((item) => {
-            return (
-              <>
+      <PageContainer>
+        <TitleWrapper>
+          <div>Explore os projetos disponíveis</div>
+        </TitleWrapper>
+        <SearchInput>
+
+          <input placeholder="Pesquise projetos"></input>
+          {/* <FaSearch /> */}
+          <select placeholder="Filtrar por">
+            <option value="opcao0"></option>
+            <option value="opcao1">React</option>
+            <option value="opcao2">Java</option>
+            <option value="opcao3">UX Design</option>
+          </select>
+        </SearchInput>
+        <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
+        {projects.map((item) => {
+          return (
+            <>
                 <ProjectWrapper>
                   <ProjectCard
                     title={<Title>{item.title}</Title>}
@@ -225,11 +229,14 @@ export const ProjectsPage = () => {
                     tag={<Tag>{item.tag}</Tag>}
                   />
                 </ProjectWrapper>
-              </>
-            );
-          })}
-        </PageContainer>
-      </div>
+            </>
+          );
+        })}
+      </PageContainer>
+    <Popup trigger={buttonPopup}>
+        <FormPage></FormPage>
+    </Popup>
+
     </>
   );
 };
