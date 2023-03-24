@@ -3,7 +3,9 @@ import styled from "styled-components";
 import HomeNavbar from "../components/Navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { FaSearch } from "react-icons/fa";
+import SearchIcon from "@mui/icons-material/Search";
+import MastHead from "../components/MastHead";
+import { Icon } from "@mui/material";
 
 const PageContainer = styled.div`
   display: flex;
@@ -12,13 +14,14 @@ const PageContainer = styled.div`
   align-items: center;
   width: 60%;
   margin: 0 auto;
+  background-color: #fff;
 `;
 
 const ProjectWrapper = styled.div`
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
   height: 180px;
-  background-color: #ffffff;
+  background-color: #fff;
   position: relative;
   z-index: 0;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
@@ -29,11 +32,11 @@ const ProjectWrapper = styled.div`
   padding: 10px;
   display: flex;
   margin-top: 15px;
-  width: 80%;
+  width: 700px;
 `;
 
 const TitleWrapper = styled.div`
-  margin-top: 40px;
+  margin-top: 80px;
   margin-bottom: 40px;
   padding: 10px;
   text-align: left;
@@ -43,33 +46,44 @@ const TitleWrapper = styled.div`
 const SearchInput = styled.div`
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 90%;
   height: 50px;
   border-radius: 10px;
   position: relative;
 
   input {
     width: 70%;
-    border: 2px solid #7e7e7e;
+    border: 2px solid #cccccc;
     padding: 10px;
     outline: none;
     font-size: 0.8rem;
+    cursor: pointer;
   }
 
   svg {
     color: white;
     background-color: rgba(6, 114, 203, 1);
-    padding: 11.5px;
+    padding: 7px;
+    cursor: pointer;
   }
 
   select {
-    width: 30%;
+    width: 60%;
     padding: 10px;
-    border: 2px solid #7e7e7e;
-    outline: none;
-    background-color: #fff;
     font-size: 0.8rem;
-    margin-left: 10px;
+    color: #999999;
+    border: 2px solid #cccccc;
+    background-color: transparent;
+    margin-left: 40px;
+    cursor: pointer;
+  }
+
+  select:hover {
+    cursor: pointer;
+  }
+
+  select:focus {
+    outline: none;
   }
 `;
 
@@ -127,10 +141,11 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
-const baseUrl = "http://localhost:3001/"
+
+
+const baseUrl = "http://localhost:3001/";
 
 export const ProjectsPage = () => {
-
   const [projetos, setProjeto] = useState(null);
 
   const projects = [
@@ -155,62 +170,66 @@ export const ProjectsPage = () => {
   ];
 
   useEffect(() => {
-    axios.get(baseUrl + 'projeto').then((response) => {
+    axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
     });
   }, []);
-  console.log(projetos)
+  console.log(projetos);
   return (
     <>
-    <HomeNavbar></HomeNavbar>
-    <PageContainer>
-      <TitleWrapper>
-        <div>Explore os projetos disponíveis</div>
-      </TitleWrapper>
-      <SearchInput>
-        <input placeholder="Pesquise projetos"></input>
-        {/* <FaSearch /> */}
-        <select placeholder="Filtrar por">
-          <option value="opcao0"></option>
-          <option value="opcao1">React</option>
-          <option value="opcao2">Java</option>
-          <option value="opcao3">UX Design</option>
-        </select>
-      </SearchInput>
-      {projects.map((item) => {
-        return (
-          <>
-            <ProjectWrapper>
-              <ProjectCard
-                title={<Title>{item.title}</Title>}
-                stats={
-                  <Stats
-                    style={{
-                      borderColor:
-                        item.stats === "In progress"
-                          ? "orange"
-                          : item.stats === "Recruiting"
-                          ? "green"
-                          : "red",
-                      color:
-                        item.stats === "In progress"
-                          ? "orange"
-                          : item.stats === "Recruiting"
-                          ? "green"
-                          : "red",
-                    }}
-                  >
-                    {item.stats}
-                  </Stats>
-                }
-                description={<Description>{item.description}</Description>}
-                tag={<Tag>{item.tag}</Tag>}
-              />
-            </ProjectWrapper>
-          </>
-        );
-      })}
-    </PageContainer>
+      <HomeNavbar></HomeNavbar>
+      <div style={{ backgroundColor: "#F5F6F7", padding: "40px", marginLeft:""}}>
+        <PageContainer>
+          
+          <MastHead />
+          <TitleWrapper>
+            <div>Explore os projetos disponíveis</div>
+          </TitleWrapper>
+          <SearchInput>
+            <input placeholder="Pesquise por projetos"></input>
+            <SearchIcon />
+            <select>
+              <option value="">Filtrar por</option>
+              <option value="opcao1">React</option>
+              <option value="opcao2">Java</option>
+              <option value="opcao3">UX Design</option>
+            </select>
+          </SearchInput>
+          {projects.map((item) => {
+            return (
+              <>
+                <ProjectWrapper>
+                  <ProjectCard
+                    title={<Title>{item.title}</Title>}
+                    stats={
+                      <Stats
+                        style={{
+                          borderColor:
+                            item.stats === "In progress"
+                              ? "orange"
+                              : item.stats === "Recruiting"
+                              ? "green"
+                              : "red",
+                          color:
+                            item.stats === "In progress"
+                              ? "orange"
+                              : item.stats === "Recruiting"
+                              ? "green"
+                              : "red",
+                        }}
+                      >
+                        {item.stats}
+                      </Stats>
+                    }
+                    description={<Description>{item.description}</Description>}
+                    tag={<Tag>{item.tag}</Tag>}
+                  />
+                </ProjectWrapper>
+              </>
+            );
+          })}
+        </PageContainer>
+      </div>
     </>
   );
 };
