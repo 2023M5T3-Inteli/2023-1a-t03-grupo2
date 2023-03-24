@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeNavbar from "../../components/Navbar";
+import axios from "axios";
 import "./FormPage.css"; //importando o arquivo CSS para personalização
 const FormPage = () => {
   const [title, setTitle] = useState("");
@@ -9,8 +10,12 @@ const FormPage = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
+  const [formData, setFormData] = useState({
+    title: '',
+    body: ''
+  });
   useEffect(() => {
-    fetch('http://localhost:3001/projetoss')
+    fetch('http://localhost:3001/projeto')
        .then((response) => response.json())
        .then((data) => {
           console.log(data);
@@ -25,6 +30,19 @@ const FormPage = () => {
     const newTag = event.target.elements.tag.value;
     setTags([...tags, newTag]);
     event.target.reset();
+  };
+  const handleOnClick = async (event) => {
+    event.preventDefault();
+    try {
+    const response = await axios.post('http://localhost:3001/projeto/criar', {
+        nome: "Hello World!",
+        descricao: "This is a new post.",
+        duracao: "5 anos",
+        emailGestor: "Helloworld@gmail.com"
+      })
+    }catch (error){
+      console.log(error)
+    }
   };
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,6 +67,7 @@ const FormPage = () => {
             id="title"
             name="title"
             value={title}
+            className="textSmallInput"
             onChange={(event) => setTitle(event.target.value)}
           />
         <div className="form-group">
@@ -56,15 +75,16 @@ const FormPage = () => {
           <textarea
             id="description"
             name="description"
+            className="textFormInput"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
           />
         </div>
         <div className="form-group">
           <label htmlFor="tags">Tags:</label>
-          <form onSubmit={handleAddTag}>
-            <input type="text" id="tag" name="tag" />
-            <button type="submit" id="tag" > Adicionar Tag</button>
+          <form onSubmit={handleAddTag} className="textSmallInput">
+            <input type="text" id="tag" name="tag" className="textSmallInput" />
+            <button type="submit" id="tag" className="buttonAll" > Adicionar Tag</button>
           </form>
           <ul>
             {tags.map((tag) => (
@@ -96,19 +116,22 @@ const FormPage = () => {
         </div>
 
         </div>
-        <div className="form-group">
-          <label htmlFor="endDate">Data de Término:</label>
-          <input
-            type="date"
-            id="endDate"
-            name="endDate"
-            value={endDate}
-            onChange={(event) => setEndDate(event.target.value)}
-          />
-        </div>
+        <div className="textSmallInput">
+          <div className="form-group">
+            <label htmlFor="endDate">Data de Término:</label>
+            <input
+              type="date"
+              id="endDate"
+              name="endDate"
+              value={endDate}
+              onChange={(event) => setEndDate(event.target.value)}
+              />
+          </div>
+          </div>
         <button
           type="submit"
-          className="btn-submit"
+          className="buttonAll"
+          onClick={handleOnClick}
         >
           Adicionar Projeto
         </button>
