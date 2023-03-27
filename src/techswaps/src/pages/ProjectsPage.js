@@ -9,6 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import MastHead from "../components/MastHead";
 
 const PageContainer = styled.div`
+  background-color: #F5F6F7;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,6 +17,7 @@ const PageContainer = styled.div`
   width: 60%;
   margin: 0 auto;
   background-color: #fff;
+  margin-top: 30px;
 `;
 
 const ProjectWrapper = styled.div`
@@ -186,6 +188,9 @@ export const ProjectsPage = () => {
     },
   ];
 
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+
   useEffect(() => {
     axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
@@ -195,6 +200,7 @@ export const ProjectsPage = () => {
   return (
     <>
       <HomeNavbar></HomeNavbar>
+
         <PageContainer>
           <MastHead />
           <TitleWrapper>
