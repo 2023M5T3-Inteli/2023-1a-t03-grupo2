@@ -13,7 +13,6 @@ import Modal from '../AddPersonModal/Modal';
 const HeroSection = () => {
     const [isOpen, setOpen] = useState(false)
     //console.log("isOpen", isOpen)
-
     return(
         <HeroContainer>
             <HeroBg>
@@ -56,10 +55,6 @@ const HeroSection = () => {
 
                     </Texto>
                 </Container>
-
-
-
-
         </HeroBg>
     </HeroContainer>
 
