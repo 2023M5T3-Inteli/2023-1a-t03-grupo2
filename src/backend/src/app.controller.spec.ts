@@ -15,20 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "endpoint reconhecimento"', () => {
-      expect(appController.getReconhecimento()).toBe('endpoint reconhecimento');
-    });
-
-    it('should return "endpoint projetos"', () => {
-      expect(appController.getProjetos()).toBe('endpoint projetos');
-    });
-
-    it('should return "endpoint detalhes"', () => {
-      expect(appController.getDetails()).toBe('endpoint detalhes');
-    });
-
-    it('should return "endpoint participantes"', () => {
-      expect(appController.getParticipantes()).toBe('endpoint participantes');
+    it('should return "Hello World!"', () => {
+      expect(appController.getHello()).toBe('Hello World!');
     });
   });
 });
