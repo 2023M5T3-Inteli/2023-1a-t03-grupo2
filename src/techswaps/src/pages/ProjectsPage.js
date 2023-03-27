@@ -160,6 +160,13 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
+const ContentProjectPage = styled.div`
+  display: flex;
+
+  justify-content: center;
+  
+`;
+
 const primeiroplano = styled.div`
   position: fixed;
   z-index: 9999;
@@ -169,7 +176,7 @@ const baseUrl = "http://localhost:3001/";
 
 export const ProjectsPage = () => {
   const [projetos, setProjeto] = useState(null);
-  //const [buttonPopup, setButtonPopup] = useState(false);
+
 
   const projects = [
     {
@@ -206,6 +213,7 @@ export const ProjectsPage = () => {
       <HeroContainer>
         <PageContainer>
           <MastHead />
+
           <TitleWrapper>
             <div>Explore os projetos disponíveis</div>
           </TitleWrapper>

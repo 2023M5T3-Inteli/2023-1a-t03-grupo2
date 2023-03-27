@@ -6,6 +6,11 @@ import { Button, Tab, Tabs, Box } from '@mui/material';
 import styled from '@emotion/styled';
 import Popup from "../components/Popup/PopUpCreateProject";
 import FormPage from '../pages/NewProject/Formpage';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { ProjectsPage } from '../pages/ProjectsPage';
+
 
 const TabContainer = styled(Tabs)`
     width: 100%;
@@ -18,8 +23,9 @@ const CustomButton = styled(Button)`
     text-transform: capitalize;
     position: absolute;
     right: 16px;
+    background-color: #005ca3;
     &:hover {
-      background-color: #005ca3;
+      background-color: #327CB5;
     }
   }
 `;
@@ -38,19 +44,27 @@ export default function Masthead() {
     setSelectedTab(newValue);
   };
 
+
+
+
+
   return (
-    <AppBar position="margin-top: 50px;" sx={{maxWidth: '100%', margin: '0 auto', backgroundColor: 'transparent' }}>
-      <MastheadWrapper>
-        <Toolbar>
-          <TabContainer value={selectedTab} onChange={handleTabChange}>
-            <Tab label="General" id="tab-0" />
-            <Tab label="Projects" id="tab-1" />
-            <Tab label="Profile" id="tab-2" />
-            <Tab label="Recognition" id="tab-3" />
-          </TabContainer>
-          <CustomButton variant="contained">Create project</CustomButton>
-        </Toolbar>
-      </MastheadWrapper>
-    </AppBar>
+    <>
+      <AppBar position="margin-top: 50px;" sx={{ maxWidth: '100%', margin: '0 auto', backgroundColor: 'transparent' }}>
+        <MastheadWrapper>
+
+          <Toolbar>
+            <TabContainer value={selectedTab} onChange={handleTabChange}>
+              <Tab label="General" id="tab-0" />
+              <Tab label="Projects" id="tab-1" />
+              <Tab label="Profile" id="tab-2" />
+              <Tab label="Recognition" id="tab-3" />
+            </TabContainer>
+            <CustomButton >Profile</CustomButton>
+          </Toolbar>
+        </MastheadWrapper>
+      </AppBar>
+
+    </>
   );
 }
