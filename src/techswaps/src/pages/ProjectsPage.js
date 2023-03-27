@@ -7,26 +7,28 @@ import Popup from "../components/Popup/PopUpCreateProject";
 import FormPage from "./NewProject/Formpage";
 import SearchIcon from "@mui/icons-material/Search";
 import MastHead from "../components/MastHead";
+import { HeroContainer } from "../components/HeroSection/HeroElements";
 
 const PageContainer = styled.div`
-  background-color: #F5F6F7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-  margin: 0 auto;
-  background-color: #fff;
-  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 `;
+
+const ContentProject = styled.div``;
 
 const ProjectWrapper = styled.div`
   border-radius: 10px;
   filter: drop-shadow(0 5px 10px 0 #ffffff);
   height: 180px;
   background-color: #fff;
-  position: relative;
-  z-index: 0;
+  /* position: relative; */
+  /* z-index: 0; */
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   margin-left: 10px;
@@ -125,9 +127,9 @@ const Stats = styled.h3`
   `}
 `;
 const StyledButton = styled.button`
-  background-color: #0672CB;
+  background-color: #0672cb;
   border-radius: 2px;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 10px 30px;
   border: none;
   text-align: center;
@@ -158,14 +160,16 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
-
+const primeiroplano = styled.div`
+  position: fixed;
+  z-index: 9999;
+`;
 
 const baseUrl = "http://localhost:3001/";
 
 export const ProjectsPage = () => {
   const [projetos, setProjeto] = useState(null);
-  const [buttonPopup, setButtonPopup] = useState(false);
-
+  //const [buttonPopup, setButtonPopup] = useState(false);
 
   const projects = [
     {
@@ -190,7 +194,6 @@ export const ProjectsPage = () => {
 
   const [buttonPopup, setButtonPopup] = useState(false);
 
-
   useEffect(() => {
     axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
@@ -200,7 +203,7 @@ export const ProjectsPage = () => {
   return (
     <>
       <HomeNavbar></HomeNavbar>
-
+      <HeroContainer>
         <PageContainer>
           <MastHead />
           <TitleWrapper>
@@ -216,7 +219,14 @@ export const ProjectsPage = () => {
               <option value="opcao3">UX Design</option>
             </select>
           </SearchInput>
-          <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
+          <StyledButton onClick={() => setButtonPopup(true)}>
+            Add project
+          </StyledButton>
+          <Popup trigger={buttonPopup} toggle={() => setButtonPopup(!buttonPopup)}>
+            <primeiroplano>
+              <FormPage></FormPage>
+            </primeiroplano>
+          </Popup>
           {projects.map((item) => {
             return (
               <>
@@ -230,14 +240,14 @@ export const ProjectsPage = () => {
                             item.stats === "In progress"
                               ? "orange"
                               : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
+                                ? "green"
+                                : "red",
                           color:
                             item.stats === "In progress"
                               ? "orange"
                               : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
+                                ? "green"
+                                : "red",
                         }}
                       >
                         {item.stats}
@@ -248,12 +258,10 @@ export const ProjectsPage = () => {
                   />
                 </ProjectWrapper>
               </>
-          );
-        })}
-      </PageContainer>
-    <Popup trigger={buttonPopup}>
-        <FormPage></FormPage>
-    </Popup>
+            );
+          })}
+        </PageContainer>
+      </HeroContainer>
     </>
   );
 };

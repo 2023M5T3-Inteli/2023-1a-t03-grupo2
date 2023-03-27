@@ -39,7 +39,7 @@ export default function Masthead() {
   };
 
   return (
-    <AppBar position="margin-top: 50px;" sx={{maxWidth: '990px', margin: '0 auto', backgroundColor: 'transparent' }}>
+    <AppBar position="margin-top: 50px;" sx={{maxWidth: '100%', margin: '0 auto', backgroundColor: 'transparent' }}>
       <MastheadWrapper>
         <Toolbar>
           <TabContainer value={selectedTab} onChange={handleTabChange}>
