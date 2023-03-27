@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Button, Tab, Tabs } from "@mui/material";
 import HomeNavbar from "../../components/Navbar";
 import MastHead from "../../components/MastHead";
+import axios from "axios";
+
+const baseURL = 'http://localhost:3001/';
 
 const MainContainer = styled.div`
 display: flex;
@@ -89,6 +92,7 @@ const ShadowProjects = () => {
 const Reconhecimento = () => {
   const [showFinishedProjects, setShowFinishedProjects] = useState(true);
   const [selectedTab, setSelectedTab] = useState(0);
+  const [post, setPost] = React.useState(null);
 
   const handleFinishedProjectsClick = () => {
     setShowFinishedProjects(true);
@@ -101,6 +105,18 @@ const Reconhecimento = () => {
   const handleTabChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
+
+  useEffect(() => {
+    fetch('http://localhost:3001/projeto')
+       .then((response) => response.json())
+       .then((data) => {
+          console.log(data);
+          setPost(data);
+       })
+       .catch((err) => {
+          console.log(err.message);
+       });
+ }, []);
 
   return (
     <>
