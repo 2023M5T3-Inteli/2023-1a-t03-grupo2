@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import ProporProjeto1 from './pages/Propor Projeto - Page/Sub-itens/Propor1';
 import ProporProjeto2 from './pages/Propor Projeto - Page/Sub-itens/Propor2';
 import ProporProjeto3 from './pages/Propor Projeto - Page/Sub-itens/Propor3';
+import RenderPageInput from './pages/Propor Projeto - Page/RenderPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProjectsPage } from './pages/ProjectsPage';
 
@@ -28,6 +29,7 @@ root.render(
         <Route path= "projetos1" element={<ProporProjeto1/>}/>
         <Route path= "projetos2" element={<ProporProjeto2/>}/>
         <Route path= "projetos3" element={<ProporProjeto3/>}/>
+        <Route path="finalpage" element= {<RenderPageInput/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

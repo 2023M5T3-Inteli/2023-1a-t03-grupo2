@@ -17,6 +17,47 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
+// const useStyles = makeStyles({
+//   root: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     height: '100vh',
+//     fontFamily: 'roboto',
+//   },
+//   input: {
+//     margin: '0px',
+//     width: '30%',
+//   },
+// });
+
+// const useStyles = makeStyles({
+//   root: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     height: '100vh',
+//     fontFamily: 'roboto',
+//     // width: '100%',
+//   },
+//   input: {
+//     margin: '0px',
+//     flex: 1,
+//   },
+//   // line: {
+//   //   //width: '100%',
+//   //   //alignItems: 'row',
+//   //   // justifyContent: 'space-between',
+//   // }
+// });
+
+////////////////////////////
+//////////////////////////
+////////////////////////////
+//////////////////////////////////
+
 const useStyles = makeStyles({
   root: {
     display: 'flex',
@@ -27,10 +68,19 @@ const useStyles = makeStyles({
     fontFamily: 'roboto',
   },
   input: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
     margin: '0px',
-    width: '30%',
+    width: '80%',
   },
 });
+
+///////////////////////////////
+///////////////////////////
+//////////////////////////////////
+//////////////////////////////
+
 
 export default function ProporProjeto3() {
   const classes = useStyles();
@@ -43,20 +93,24 @@ export default function ProporProjeto3() {
 
       <h1>3. Informe quais perfis de colaboradores serão necessários no projeto</h1>
 
-      <TextField
-        className={classes.input}
+      <div className={classes.line}>
+
+        <TextField
         label="Título da Vaga"
         variant="outlined"
         placeholder="Insira aqui o nome do seu projeto"
         margin="normal" //none and dense and normal
         required //resposta obrigatória
         sx={{margin:3}}
-      />
+        />
 
-<Box sx={{ minWidth: 240 }}>
+
+     <Box sx={{ minWidth: 240 }}>
+
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Tipo de Vaga</InputLabel>
           <Select
+            //className={classes.input}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={Setor} //chamando a const acima
@@ -74,6 +128,7 @@ export default function ProporProjeto3() {
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">Área de Atuação</InputLabel>
           <Select
+            //className={classes.input}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={Status} //chamando a const acima
@@ -87,9 +142,11 @@ export default function ProporProjeto3() {
         </FormControl>
       </Box>
 
+      </div>
+      
+
 
       <TextField
-        className={classes.input}
         label="Título da Vaga"
         variant="outlined"
         placeholder="Insira aqui o nome do seu projeto"
@@ -132,51 +189,6 @@ export default function ProporProjeto3() {
         </FormControl>
       </Box>
   
-
-    <TextField
-        className={classes.input}
-        label="Título da Vaga"
-        variant="outlined"
-        placeholder="Insira aqui o nome do seu projeto"
-        //margin="normal" //none and dense and normal
-        required //resposta obrigatória
-        sx={{margin:3}}
-      />    
-
-    <Box sx={{ minWidth: 240 }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Tipo de Vaga</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={Setor} //chamando a const acima
-            label="Sector"
-            //margin="normal" //não entrou
-          >
-            <MenuItem value={10}>Technology</MenuItem>
-            <MenuItem value={20}>Compliance</MenuItem>
-            <MenuItem value={30}>Corporate Governance</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
-
-      <Box sx={{ minWidth: 240 }}>
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Área de Atuação</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={Status} //chamando a const acima
-            label="Status"
-            //margin="normal" //não entrou
-          >
-            <MenuItem value={10}>Recrutando membros para iniciar</MenuItem>
-            <MenuItem value={20}>Em andamento</MenuItem>
-            <MenuItem value={30}>Em revisão para publicar</MenuItem>
-          </Select>
-        </FormControl>
-      </Box>
-
       <Button variant="contained" href="Projetos2"  sx={{margin:2}}>
         Go Back to step 2
       </Button> 
@@ -185,5 +197,7 @@ export default function ProporProjeto3() {
    
         
     </div>
+     
+      
   );
 }
