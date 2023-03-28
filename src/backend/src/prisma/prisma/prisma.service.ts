@@ -83,12 +83,12 @@ export class PrismaService {
 }
 
   async getSolicitacao(){
-  const solicitacao = await this.prisma.solicitationState.findMany()
+  const solicitacao = await this.prisma.estadodesolicitacao.findMany()
   return solicitacao
 }
 
   async createSolicitacao(solicitacaoData: ISolicitacao): Promise<ISolicitacao>{
-  const newSolicitacao = await this.prisma.solicitationState.create({
+  const newSolicitacao = await this.prisma.estadodesolicitacao.create({
     data: {
       emailGestor: solicitacaoData.emailGestor
     }
@@ -96,14 +96,14 @@ export class PrismaService {
   return newSolicitacao
 }
   async updateSolicitacao(id, solicitacaoData){
-  const updatedSolicitacao = await this.prisma.solicitationState.update({
+  const updatedSolicitacao = await this.prisma.estadodesolicitacao.update({
     where: { id },
     data: solicitacaoData
   })
   return updatedSolicitacao
 }
   async deleteSolicitacao(id){
-  const deletedSolicitacao = await this.prisma.solicitationState.delete({
+  const deletedSolicitacao = await this.prisma.estadodesolicitacao.delete({
     where: { id }
   })
   return deletedSolicitacao
