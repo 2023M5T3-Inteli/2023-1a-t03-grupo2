@@ -15,9 +15,9 @@ const HeroSection = () => {
     const [isOpen, setOpen] = useState(false)
     //console.log("isOpen", isOpen)
     return (
-        <HeroContainer>
 
-            <HeroBg>
+        <>
+
                 <Masthead></Masthead>
                 <Container>
                     <Texto>
@@ -58,9 +58,8 @@ const HeroSection = () => {
 
                     </Texto>
                 </Container>
-            </HeroBg>
-        </HeroContainer>
 
+        </>
     )
 }
 export default HeroSection;

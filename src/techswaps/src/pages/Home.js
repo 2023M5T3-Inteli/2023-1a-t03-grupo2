@@ -3,13 +3,21 @@ import HeroSection from '../components/HeroSection/HeroSection'
 import Masthead from '../components/MastHead'
 import HomeNavbar from '../components/Navbar'
 import { ProjectsPage } from './ProjectsPage'
+// import Tab from 'react-bootstrap/Tab';
+// import Tabs from 'react-bootstrap/Tabs';
+import { HeroBg, HeroContainer } from '../components/HeroSection/HeroElements'
 
 const Home = () => {
-  
+
   return (
     <>
       <HomeNavbar />
-      <HeroSection />
+      <HeroContainer>
+        <HeroBg>
+          <Masthead />
+          <HeroSection />
+        </HeroBg>
+      </HeroContainer>
     </>
   )
 }
