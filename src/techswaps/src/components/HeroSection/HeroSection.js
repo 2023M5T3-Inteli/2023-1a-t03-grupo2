@@ -8,14 +8,17 @@ import meetImg from '../HeroSection/img/meet2.png'
 import blueMeet from '../HeroSection/img/blueMeeting.png'
 import dados from '../HeroSection/img/dados.png'
 import Modal from '../AddPersonModal/Modal';
+import Masthead from '../MastHead';
 
 
 const HeroSection = () => {
     const [isOpen, setOpen] = useState(false)
     //console.log("isOpen", isOpen)
-    return(
+    return (
         <HeroContainer>
+
             <HeroBg>
+                <Masthead></Masthead>
                 <Container>
                     <Texto>
                         <Titulo>Bem-vindo(a) ao TechSwaps</Titulo>
@@ -55,9 +58,9 @@ const HeroSection = () => {
 
                     </Texto>
                 </Container>
-        </HeroBg>
-    </HeroContainer>
+            </HeroBg>
+        </HeroContainer>
 
-)
+    )
 }
 export default HeroSection;
