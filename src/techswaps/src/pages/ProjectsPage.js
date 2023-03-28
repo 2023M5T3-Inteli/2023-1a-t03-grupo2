@@ -18,6 +18,9 @@ const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const ContentProject = styled.div``;
@@ -271,59 +274,6 @@ export const ProjectsPage = () => {
           })}
         </PageContainer>
       </HeroContainer>
-      <PageContainer>
-        <MastHead />
-        <TitleWrapper>
-          <div>Explore os projetos disponíveis</div>
-        </TitleWrapper>
-        <SearchInput>
-          <input placeholder="Pesquise projetos"></input>
-          <SearchIcon />
-          <select placeholder="Filtrar por">
-            <option value="opcao0"></option>
-            <option value="opcao1">React</option>
-            <option value="opcao2">Java</option>
-            <option value="opcao3">UX Design</option>
-          </select>
-        </SearchInput>
-        <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
-        {projects.map((item) => {
-          return (
-            <>
-              <ProjectWrapper>
-                <ProjectCard
-                  title={<Title>{item.title}</Title>}
-                  stats={
-                    <Stats
-                      style={{
-                        borderColor:
-                          item.stats === "In progress"
-                            ? "orange"
-                            : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
-                        color:
-                          item.stats === "In progress"
-                            ? "orange"
-                            : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
-                      }}
-                    >
-                      {item.stats}
-                    </Stats>
-                  }
-                  description={<Description>{item.description}</Description>}
-                  tag={<Tag>{item.tag}</Tag>}
-                />
-              </ProjectWrapper>
-            </>
-          );
-        })}
-      </PageContainer>
-      <Popup trigger={buttonPopup}>
-        <FormPage></FormPage>
-      </Popup>
     </>
   );
 };
