@@ -1,5 +1,4 @@
-interface IVagas{
-    id: number;
+export interface IVagas{
     tipoVaga: string;
     descricao: string;
 }

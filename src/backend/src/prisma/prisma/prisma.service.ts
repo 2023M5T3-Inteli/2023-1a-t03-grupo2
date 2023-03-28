@@ -1,6 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { IProjeto } from 'src/interfaces/projeto.interface';
+import { ISolicitacao } from 'src/interfaces/solicitacao.interface';
+import { IUser } from 'src/interfaces/user.interface';
+import { IVagas } from 'src/interfaces/vagas.interface';
 
 @Injectable()
 export class PrismaService {
@@ -17,7 +20,6 @@ export class PrismaService {
 
 
   async createProjeto(data: IProjeto): Promise<IProjeto> {
-    console.log(data)
     try{
     const newProjeto = await this.prisma.projeto.create({
         data: {
@@ -53,11 +55,18 @@ export class PrismaService {
   return users
 }
 
-  async createUser(userData) {
-  const newUser = await this.prisma.user.create({
-    data: userData
+  async createUser(userData: IUser): Promise<IUser> {
+  try{const newUser = await this.prisma.user.create({
+    data: {
+      nome: userData.nome,
+      habilidades: userData.habilidades,
+      areaAtuacao: userData.areaAtuacao
+    }
   })
   return newUser
+}catch(err){
+  console.log(err)
+}
 }
   async updateUser(idFuncionario, userData) {
   const updatedUser = await this.prisma.user.update({
@@ -78,9 +87,11 @@ export class PrismaService {
   return solicitacao
 }
 
-  async createSolicitacao(solicitacaoData){
+  async createSolicitacao(solicitacaoData: ISolicitacao): Promise<ISolicitacao>{
   const newSolicitacao = await this.prisma.solicitationState.create({
-    data: solicitacaoData
+    data: {
+      emailGestor: solicitacaoData.emailGestor
+    }
   })
   return newSolicitacao
 }
@@ -104,9 +115,12 @@ export class PrismaService {
   return vagas
 }
 
-  async createVagas(vagaData){
+  async createVagas(vagaData: IVagas): Promise<IVagas>{
   const newVaga = await this.prisma.vagas.create({
-    data: vagaData
+    data: {
+      tipoVaga: vagaData.tipoVaga,
+      descricao: vagaData.descricao
+    }
   })
   return newVaga
 }

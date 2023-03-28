@@ -2,13 +2,14 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { CreateVagasDto } from './dto/create-vagas.dto';
 import { UpdateVagasDto } from './dto/update-vagas.dto';
 import { PrismaService } from 'src/prisma/prisma/prisma.service';
+import { IVagas } from 'src/interfaces/vagas.interface';
 
 @Controller('vagas')
 export class VagasController {
   constructor(private readonly vagasService: PrismaService) {}
 
-  @Post('/create')
-  create(@Body() createVagasDto: CreateVagasDto) {
+  @Post('criar')
+  async create(@Body() createVagasDto: IVagas) {
     return this.vagasService.createVagas(createVagasDto);
   }
 
