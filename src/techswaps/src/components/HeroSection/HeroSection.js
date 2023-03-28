@@ -18,7 +18,6 @@ const HeroSection = () => {
 
         <>
 
-                <Masthead></Masthead>
                 <Container>
                     <Texto>
                         <Titulo>Bem-vindo(a) ao TechSwaps</Titulo>
