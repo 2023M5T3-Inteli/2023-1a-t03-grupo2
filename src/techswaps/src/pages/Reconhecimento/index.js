@@ -18,6 +18,10 @@ text-align: center;
 min-height: 100vh;
 `;
 
+const TitleProjetosFinalizados = styled.h2`
+    color: #000
+`;
+
 const Container = styled.div`
   position: absolute;
   top: 0;
@@ -80,7 +84,7 @@ const InsideContainer = styled.div`
 const FinishedProjects = () => {
   return (
     <div>
-      <h2>Lista de Projetos Finalizados</h2>
+      <TitleProjetosFinalizados>Lista de Projetos Finalizados</TitleProjetosFinalizados>
     </div>
   );
 };
@@ -124,12 +128,11 @@ const Reconhecimento = () => {
 
   return (
     <>
-      <HomeNavbar />
-      <HeroContainer>
+
 
         <MainContainer>
           <Container>
-            <MastHead />
+            
             {selectedTab === 0 && (
               <ButtonContainer>
                 <OptionButton
@@ -167,7 +170,6 @@ const Reconhecimento = () => {
             )}
           </Container>
         </MainContainer>
-      </HeroContainer>
     </>
   );
 };

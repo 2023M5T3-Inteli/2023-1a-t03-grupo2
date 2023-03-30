@@ -98,13 +98,6 @@ const ProfilePage = () => {
 
     return (
         <>
-            <HomeNavbar />
-            <HeroContainer>
-                <MainContainer>
-                    <HeadMast>
-                        <MastHead />
-                    </HeadMast>
-
                     <ProfileInfoImg>
                         <ProfilePic src={profile} />
                         <ProfileInfo>
@@ -127,8 +120,6 @@ const ProfilePage = () => {
                     </Container2>
 
 
-                </MainContainer>
-            </HeroContainer>
         </>
     );
 };

@@ -18,6 +18,9 @@ const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const ContentProject = styled.div``;
@@ -41,11 +44,12 @@ const ProjectWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  margin-top: 80px;
+  margin-top: 10px;
   margin-bottom: 40px;
   padding: 10px;
   text-align: left;
   font-size: 1.5rem;
+  color: #000
 `;
 
 const SearchInput = styled.div`
@@ -55,6 +59,7 @@ const SearchInput = styled.div`
   height: 50px;
   border-radius: 10px;
   position: relative;
+  
 
   input {
     width: 70%;
@@ -97,6 +102,7 @@ const Title = styled.h2`
   font-size: 1.5rem;
   margin: 0.4rem;
   padding: 0;
+  color: #000
 `;
 
 const Stats = styled.h3`
@@ -107,6 +113,7 @@ const Stats = styled.h3`
   display: inline-block;
   border: 2px solid;
   border-radius: 5px;
+    color: #000
   ${(props) =>
     props.status === "In progress" &&
     `
@@ -146,6 +153,7 @@ const Description = styled.div`
   margin-left: 10px;
   margin: 0.4rem;
   padding: 0;
+  color: #000
 `;
 
 const Tag = styled.div`
@@ -210,10 +218,8 @@ export const ProjectsPage = () => {
   console.log(projetos);
   return (
     <>
-      <HomeNavbar></HomeNavbar>
       <HeroContainer>
         <PageContainer>
-          <MastHead />
 
           <TitleWrapper>
             <div>Explore os projetos disponíveis</div>
@@ -271,59 +277,6 @@ export const ProjectsPage = () => {
           })}
         </PageContainer>
       </HeroContainer>
-      <PageContainer>
-        <MastHead />
-        <TitleWrapper>
-          <div>Explore os projetos disponíveis</div>
-        </TitleWrapper>
-        <SearchInput>
-          <input placeholder="Pesquise projetos"></input>
-          <SearchIcon />
-          <select placeholder="Filtrar por">
-            <option value="opcao0"></option>
-            <option value="opcao1">React</option>
-            <option value="opcao2">Java</option>
-            <option value="opcao3">UX Design</option>
-          </select>
-        </SearchInput>
-        <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
-        {projects.map((item) => {
-          return (
-            <>
-              <ProjectWrapper>
-                <ProjectCard
-                  title={<Title>{item.title}</Title>}
-                  stats={
-                    <Stats
-                      style={{
-                        borderColor:
-                          item.stats === "In progress"
-                            ? "orange"
-                            : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
-                        color:
-                          item.stats === "In progress"
-                            ? "orange"
-                            : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
-                      }}
-                    >
-                      {item.stats}
-                    </Stats>
-                  }
-                  description={<Description>{item.description}</Description>}
-                  tag={<Tag>{item.tag}</Tag>}
-                />
-              </ProjectWrapper>
-            </>
-          );
-        })}
-      </PageContainer>
-      <Popup trigger={buttonPopup}>
-        <FormPage></FormPage>
-      </Popup>
     </>
   );
 };

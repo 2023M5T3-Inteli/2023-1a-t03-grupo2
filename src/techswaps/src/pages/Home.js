@@ -14,7 +14,7 @@ const Home = () => {
       <HeroContainer>
         <HeroBg>
           <Masthead />
-          <HeroSection />
+
         </HeroBg>
       </HeroContainer>
     </>
