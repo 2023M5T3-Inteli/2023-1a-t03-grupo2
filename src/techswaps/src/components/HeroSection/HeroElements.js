@@ -13,7 +13,6 @@ export const HeroContainer = styled.div`
     margin-right: 15%;
     margin-top: 5%;
     font-family: "Roboto", sans-serif;
-    margin-bottom: 60px;
 `
 
 export const HeroBg = styled.div`
@@ -128,13 +127,4 @@ export const StyledButtonDark = styled.button`
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-`;
-
-export const SearchInput = styled.input`
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  font-size: 16px;
-  width: 300px;
 `;

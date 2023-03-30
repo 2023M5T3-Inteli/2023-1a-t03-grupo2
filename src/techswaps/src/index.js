@@ -14,7 +14,6 @@ import ProporProjeto3 from './pages/Propor Projeto - Page/Sub-itens/Propor3';
 import RenderPageInput from './pages/Propor Projeto - Page/RenderPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProjectsPage } from './pages/ProjectsPage';
-import MainPage from './pages/FAQ - Page/FaqPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,8 +26,6 @@ root.render(
         <Route path="login" element={<Login />} />
         <Route path="cadastro" element={<FormPage />} />
         <Route path="projetos" element={<ProjectsPage  />} />
-        <Route path="reconhecimento" element={<Reconhecimento />} />
-        <Route path="faq" element={<MainPage />} />
         <Route path= "projetos1" element={<ProporProjeto1/>}/>
         <Route path= "projetos2" element={<ProporProjeto2/>}/>
         <Route path= "projetos3" element={<ProporProjeto3/>}/>

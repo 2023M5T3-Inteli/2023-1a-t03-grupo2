@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  techswaps:
+    image: mysql:8
+    container_name: projetos
+    restart: always
+    enviroment:
+      MYSQL_ROOT_PASSWORD: Alealan2522#
+      MYSQL_DATABASE: techswaps
+    ports:
+      - 3306:3306
