@@ -146,6 +146,7 @@ async createusuarios(usuariosData: IUsuarios): Promise<IUsuarios>{
   const newusuarios = await this.prisma.usuarios.create({
     data: {
       nome: usuariosData.nome,
+      email: usuariosData.email,
       phone: usuariosData.phone,
       data_nascimento: usuariosData.data_nascimento
     }
