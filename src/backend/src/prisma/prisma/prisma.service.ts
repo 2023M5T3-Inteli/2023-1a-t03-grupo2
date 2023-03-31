@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { IProjeto } from 'src/interfaces/projeto.interface';
 import { ISolicitacao } from 'src/interfaces/solicitacao.interface';
 import { IUser } from 'src/interfaces/user.interface';
+import { IUsuarios } from 'src/interfaces/usuarios.interface';
 import { IVagas } from 'src/interfaces/vagas.interface';
 
 @Injectable()
@@ -136,6 +137,33 @@ export class PrismaService {
     where: { id }
   })
   return deletedVaga
+}
+async getusuarios(){
+  const usuarios = await this.prisma.usuarios.findMany()
+  return usuarios
+}
+async createusuarios(usuariosData: IUsuarios): Promise<IUsuarios>{
+  const newusuarios = await this.prisma.usuarios.create({
+    data: {
+      nome: usuariosData.nome,
+      phone: usuariosData.phone,
+      data_nascimento: usuariosData.data_nascimento
+    }
+  })
+  return newusuarios
+}
+  async updateusuarios(id, usuariosData){
+  const updatedusuarios = await this.prisma.usuarios.update({
+    where: { id },
+    data: usuariosData
+  })
+  return updatedusuarios
+}
+  async deleteusuarios(id){
+  const deletedusuarios = await this.prisma.usuarios.delete({
+    where: { id }
+  })
+  return deletedusuarios
 }
 
   async onModuleDestroy() {
