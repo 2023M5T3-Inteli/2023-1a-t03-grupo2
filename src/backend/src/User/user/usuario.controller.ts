@@ -5,32 +5,25 @@ import { PrismaService } from 'src/prisma/prisma/prisma.service';
 import { IUser } from 'src/interfaces/user.interface';
 import { IUsuarios } from 'src/interfaces/usuarios.interface';
 
-@Controller('user')
+@Controller('usuarios')
 export class UserController {
   constructor(private readonly userService: PrismaService) {}
-
-  @Post('create')
-  create(@Body() createUserDto: IUser) {
-    return this.userService.createUser(createUserDto);
-  }
-
-  @Get()
+  @Get('usuarios')
   findAll() {
-    return this.userService.getUsers();
+    return this.userService.getusuarios();
   }
-
-  // @Get(':id')
-  // findOne(@Param('id') id: string) {
-  //   return this.userService.findOne(+id);
-  // }
-
+  @Post('create')
+  create(@Body() createUserDto: IUsuarios) {
+    return this.userService.createusuarios(createUserDto);
+  }
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.updateUser(+id, updateUserDto);
+    return this.userService.updateusuarios(+id, updateUserDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.userService.deleteUser(+id);
+    return this.userService.deleteusuarios(+id);
   }
+
 }
