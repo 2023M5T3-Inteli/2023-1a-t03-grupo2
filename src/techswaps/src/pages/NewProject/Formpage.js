@@ -5,10 +5,6 @@ import "./FormPage.css"; //importando o arquivo CSS para personalização
 import styled from 'styled-components'
 
 
-
-
-
-
 const FormPage = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -113,7 +109,7 @@ const FormPage = () => {
         </div>
         <div className="textSmallInput">
           <div className="form-group">
-            <label htmlFor="startDate">Data de Início:</label>
+            <label htmlFor="startDate">Data de Início: </label>
             <input
               type="date"
               id="startDate"
@@ -126,7 +122,7 @@ const FormPage = () => {
         </div>
         <div className="textSmallInput">
           <div className="form-group">
-            <label htmlFor="endDate">Data de Término:</label>
+            <label htmlFor="endDate">Data de Término: </label>
             <input
               type="date"
               id="endDate"

@@ -217,7 +217,6 @@ export const ProjectsPage = () => {
       <HeroContainer>
         <PageContainer>
           <MastHead />
-
           <TitleWrapper>
             <div>Explore os projetos disponíveis</div>
           </TitleWrapper>
