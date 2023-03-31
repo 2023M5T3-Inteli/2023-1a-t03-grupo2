@@ -36,7 +36,7 @@ model Vagas {
 model usuarios{
   id Int @id @default(autoincrement())
   nome String
+  email String @unique
   phone Int
-  data_nascimento DateTime
-  
+  data_nascimento DateTime  
 }
