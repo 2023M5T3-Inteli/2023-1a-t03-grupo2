@@ -38,5 +38,5 @@ model usuarios{
   nome String
   email String @unique
   phone Int
-  data_nascimento DateTime  
+  data_nascimento String
 }

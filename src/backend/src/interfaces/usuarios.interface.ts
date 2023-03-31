@@ -2,5 +2,5 @@ export interface IUsuarios{
     nome: string,
     email: string,
     phone: number,
-    data_nascimento: Date
+    data_nascimento: string
 }
