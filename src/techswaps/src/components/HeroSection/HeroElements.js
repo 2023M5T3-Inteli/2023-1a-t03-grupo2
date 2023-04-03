@@ -89,6 +89,7 @@ export const Imagem5 = styled.img`
 export const Texto = styled.div`
   flex: 1;
   margin-left: 20px;
+  color: #000
 
 `;
 

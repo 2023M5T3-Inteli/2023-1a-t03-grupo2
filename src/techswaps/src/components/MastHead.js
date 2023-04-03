@@ -10,6 +10,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { ProjectsPage } from '../pages/ProjectsPage';
+import HeroSection from './HeroSection/HeroSection';
+import ProfilePage from '../pages/ProfilePage/profilePage';
+import Reconhecimento from '../pages/Reconhecimento';
 
 
 const TabContainer = styled(Tabs)`
@@ -55,14 +58,18 @@ export default function Masthead() {
 
           <Toolbar>
             <TabContainer value={selectedTab} onChange={handleTabChange}>
-              <Tab label="General" id="tab-0" />
+              <Tab label="Home" id="tab-0" />
               <Tab label="Projects" id="tab-1" />
-              <Tab label="Profile" id="tab-2" />
-              <Tab label="Recognition" id="tab-3" />
+              <Tab label="Reconhecimento" id="tab-2" />
+              <Tab label="Profile" id="tab-3" />
             </TabContainer>
             <CustomButton >Profile</CustomButton>
           </Toolbar>
         </MastheadWrapper>
+        {selectedTab === 0 && <HeroSection />}
+        {selectedTab === 1 && <ProjectsPage />}
+        {selectedTab === 2 && <Reconhecimento />}
+        {selectedTab === 3 && <ProfilePage />}
       </AppBar>
 
     </>

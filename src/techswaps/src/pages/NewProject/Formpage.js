@@ -65,8 +65,8 @@ const FormPage = () => {
   console.log(projeto)
   return (
     <>
-    
-      <h1>Create a new project</h1>
+
+      <h1 className="textblack">Create a new project</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group"></div>
         <label className="titleForm" htmlFor="title">Title of the project:</label>
@@ -79,7 +79,7 @@ const FormPage = () => {
           onChange={(event) => setTitle(event.target.value)}
         />
         <div className="form-group">
-          <label htmlFor="description">Descrição:</label>
+          <label htmlFor="description" className="textblack">Descrição:</label>
           <textarea
             id="description"
             name="description"
@@ -89,7 +89,7 @@ const FormPage = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="tags">Tags:</label>
+          <label htmlFor="tags" className="textblack">Tags:</label>
           <form onSubmit={handleAddTag} className="textSmallInput">
             <input type="text" id="tag" name="tag" className="textSmallInput" />
             <button type="submit" id="tag" className="buttonAll" > Adicionar Tag</button>
@@ -101,7 +101,7 @@ const FormPage = () => {
           </ul>
         </div>
         <div className="form-group">
-          <label htmlFor="coOwner">Co-Owner:</label>
+          <label htmlFor="coOwner" className="textblack">Co-Owner:</label>
           <input
             type="text"
             id="coOwner"
@@ -154,7 +154,7 @@ const FormPage = () => {
           </>
         );
       })}
-  
+
     </>
   );
 };
