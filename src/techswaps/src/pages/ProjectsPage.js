@@ -180,14 +180,12 @@ export const ProjectsPage = () => {
       setProjeto(response.data);
     });
   }, []);
-
-
+  console.log(projetos)
 
   return (
     <>
       <HeroContainer>
         <PageContainer>
-
           <TitleWrapper>
             <div>Explore the available projects</div>
           </TitleWrapper>
