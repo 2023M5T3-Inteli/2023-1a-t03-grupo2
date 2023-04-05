@@ -38,14 +38,15 @@ const FormPage = () => {
     setTags([...tags, newTag]);
     event.target.reset();
   };
+  console.log(description)
   const handleOnClick = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/projeto/criar', {
-        nome: "Hello World!",
-        descricao: "This is a new post.",
-        duracao: "5 anos",
-        emailGestor: "Helloworld@gmail.com"
+      const response = await axios.post('http://localhost:3000/projeto/criar', {
+        nome: title,
+        descricao: description,
+        duracao: title,
+        emailGestor: coOwner
       })
     } catch (error) {
       console.log(error)
@@ -62,7 +63,6 @@ const FormPage = () => {
     setStartDate("");
     setEndDate("");
   };
-  console.log(projeto)
   return (
     <>
 

@@ -182,10 +182,10 @@ const primeiroplano = styled.div`
   z-index: 9999;
 `;
 
-const baseUrl = "http://localhost:3001/";
+const baseUrl = "http://localhost:3000/";
 
 export const ProjectsPage = () => {
-  const [projetos, setProjeto] = useState(null);
+  const [projetos, setProjeto] = useState([]);
   //const [buttonPopup, setButtonPopup] = useState(false);
 
 
@@ -216,10 +216,12 @@ export const ProjectsPage = () => {
 
   useEffect(() => {
     axios.get(baseUrl + "projeto").then((response) => {
+      console.log(projetos)
       setProjeto(response.data);
+      
     });
   }, []);
-  console.log(projetos);
+
 
 
   return (
@@ -248,12 +250,12 @@ export const ProjectsPage = () => {
               <FormPage></FormPage>
             </primeiroplano>
           </Popup>
-          {projects.map((item) => {
+          {projetos.map((item) => {
             return (
               <>
                 <ProjectWrapper onClick={() => setProjetctPopup(true)}>
                   <ProjectCard
-                    title={<Title>{item.title}</Title>}
+                    title={<Title>{item.nome}</Title>}
                     stats={
                       <Stats
                         style={{
@@ -274,8 +276,8 @@ export const ProjectsPage = () => {
                         {item.stats}
                       </Stats>
                     }
-                    description={<Description>{item.description}</Description>}
-                    tag={<Tag>{item.tag}</Tag>}
+                    description={<Description>{item.descricao}</Description>}
+                    tag={<Tag>{item.duracao}</Tag>}
                   />
                 </ProjectWrapper>
                 <Popup2 trigger={projectPopup} toggle={() => setProjetctPopup(!projectPopup)}>
