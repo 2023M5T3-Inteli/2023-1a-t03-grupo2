@@ -1,13 +1,6 @@
 import React, { useState, useEffect } from "react";
-import HomeNavbar from "../../components/Navbar";
 import axios from "axios";
 import "./FormPage.css"; //importando o arquivo CSS para personalização
-import styled from 'styled-components'
-
-
-
-
-
 
 const FormPage = () => {
   const [title, setTitle] = useState("");
@@ -17,10 +10,7 @@ const FormPage = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
-  const [formData, setFormData] = useState({
-    title: '',
-    body: ''
-  });
+
   useEffect(() => {
     fetch('http://localhost:3001/projeto')
       .then((response) => response.json())
@@ -38,11 +28,10 @@ const FormPage = () => {
     setTags([...tags, newTag]);
     event.target.reset();
   };
-  console.log(description)
   const handleOnClick = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/projeto/criar', {
+      await axios.post('http://localhost:3000/projeto/criar', {
         nome: title,
         descricao: description,
         duracao: title,
@@ -65,7 +54,7 @@ const FormPage = () => {
   };
   return (
     <>
-
+      
       <h1 className="textblack">Create a new project</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group"></div>
@@ -136,6 +125,13 @@ const FormPage = () => {
             />
           </div>
         </div>
+        <button
+          type="submit"
+          className="buttonAll"
+          onClick={handleOnClick}
+        >
+          Adicionar Projeto
+        </button>
         <button
           type="submit"
           className="buttonAll"

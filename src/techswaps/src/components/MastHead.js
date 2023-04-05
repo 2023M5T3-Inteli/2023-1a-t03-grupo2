@@ -1,14 +1,8 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import { Button, Tab, Tabs, Box } from '@mui/material';
 import styled from '@emotion/styled';
-import Popup from "../components/Popup/PopUpCreateProject";
-import FormPage from '../pages/NewProject/Formpage';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { ProjectsPage } from '../pages/ProjectsPage';
 import HeroSection from './HeroSection/HeroSection';
 import ProfilePage from '../pages/ProfilePage/profilePage';
