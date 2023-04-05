@@ -3,6 +3,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PrismaService } from 'src/prisma/prisma/prisma.service';
 import { IUser } from 'src/interfaces/user.interface';
+import { IUsuarios } from 'src/interfaces/usuarios.interface';
 
 @Controller('user')
 export class UserController {

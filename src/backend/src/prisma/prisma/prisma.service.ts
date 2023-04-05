@@ -3,6 +3,7 @@ import { PrismaClient } from '@prisma/client';
 import { IProjeto } from 'src/interfaces/projeto.interface';
 import { ISolicitacao } from 'src/interfaces/solicitacao.interface';
 import { IUser } from 'src/interfaces/user.interface';
+import { IUsuarios } from 'src/interfaces/usuarios.interface';
 import { IVagas } from 'src/interfaces/vagas.interface';
 
 @Injectable()
@@ -83,12 +84,12 @@ export class PrismaService {
 }
 
   async getSolicitacao(){
-  const solicitacao = await this.prisma.solicitationState.findMany()
+  const solicitacao = await this.prisma.estadodesolicitacao.findMany()
   return solicitacao
 }
 
   async createSolicitacao(solicitacaoData: ISolicitacao): Promise<ISolicitacao>{
-  const newSolicitacao = await this.prisma.solicitationState.create({
+  const newSolicitacao = await this.prisma.estadodesolicitacao.create({
     data: {
       emailGestor: solicitacaoData.emailGestor
     }
@@ -96,14 +97,14 @@ export class PrismaService {
   return newSolicitacao
 }
   async updateSolicitacao(id, solicitacaoData){
-  const updatedSolicitacao = await this.prisma.solicitationState.update({
+  const updatedSolicitacao = await this.prisma.estadodesolicitacao.update({
     where: { id },
     data: solicitacaoData
   })
   return updatedSolicitacao
 }
   async deleteSolicitacao(id){
-  const deletedSolicitacao = await this.prisma.solicitationState.delete({
+  const deletedSolicitacao = await this.prisma.estadodesolicitacao.delete({
     where: { id }
   })
   return deletedSolicitacao
@@ -137,8 +138,38 @@ export class PrismaService {
   })
   return deletedVaga
 }
+async getusuarios(){
+  const usuarios = await this.prisma.usuarios.findMany()
+  return usuarios
+}
+async createusuarios(usuariosData: IUsuarios): Promise<IUsuarios>{
+  const newusuarios = await this.prisma.usuarios.create({
+    data: {
+      nome: usuariosData.nome,
+      email: usuariosData.email,
+      phone: usuariosData.phone,
+      data_nascimento: usuariosData.data_nascimento
+    }
+  })
+  return newusuarios
+}
+  async updateusuarios(id, usuariosData){
+  const updatedusuarios = await this.prisma.usuarios.update({
+    where: { id },
+    data: usuariosData
+  })
+  return updatedusuarios
+}
+  async deleteusuarios(id){
+  const deletedusuarios = await this.prisma.usuarios.delete({
+    where: { id }
+  })
+  return deletedusuarios
+}
 
   async onModuleDestroy() {
   await this.prisma.$disconnect();
 }
+
+
 }

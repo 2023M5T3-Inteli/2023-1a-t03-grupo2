@@ -1,13 +1,11 @@
 import { ProjectCard } from "../components/ProjectCard";
 import styled from "styled-components";
-import HomeNavbar from "../components/Navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Popup from "../components/Popup/PopUpCreateProject";
 import Popup2 from "../components/Popup/PopUpDetails";
 import FormPage from "./NewProject/Formpage";
 import SearchIcon from "@mui/icons-material/Search";
-import MastHead from "../components/MastHead";
 import { HeroContainer } from "../components/HeroSection/HeroElements";
 import { ProjectDetails } from "../components/ProjectDetail/projectDetails";
 
@@ -24,8 +22,6 @@ const PageContainer = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
-const ContentProject = styled.div``;
 
 const ProjectWrapper = styled.div`
   border-radius: 10px;
@@ -170,45 +166,10 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
-const ContentProjectPage = styled.div`
-  display: flex;
-
-  justify-content: center;
-  
-`;
-
-const primeiroplano = styled.div`
-  position: fixed;
-  z-index: 9999;
-`;
-
-const baseUrl = "http://localhost:3001/";
+const baseUrl = "http://localhost:3000/";
 
 export const ProjectsPage = () => {
-  const [projetos, setProjeto] = useState(null);
-  //const [buttonPopup, setButtonPopup] = useState(false);
-
-
-  const projects = [
-    {
-      title: "Lightining",
-      stats: "In progress",
-      description: "Lorem impsu",
-      tag: "python",
-    },
-    {
-      title: "Lightining",
-      stats: "In progress",
-      description: "Lorem impsu",
-      tag: "python",
-    },
-    {
-      title: "Lightining",
-      stats: "Recruiting",
-      description: "Lorem impsu",
-      tag: "python",
-    },
-  ];
+  const [projetos, setProjeto] = useState([]);
 
   const [buttonPopup, setButtonPopup] = useState(false);
 
@@ -219,7 +180,7 @@ export const ProjectsPage = () => {
       setProjeto(response.data);
     });
   }, []);
-  console.log(projetos);
+
 
 
   return (
@@ -248,12 +209,12 @@ export const ProjectsPage = () => {
               <FormPage></FormPage>
             </primeiroplano>
           </Popup>
-          {projects.map((item) => {
+          {projetos.map((item) => {
             return (
               <>
                 <ProjectWrapper onClick={() => setProjetctPopup(true)}>
                   <ProjectCard
-                    title={<Title>{item.title}</Title>}
+                    title={<Title>{item.nome}</Title>}
                     stats={
                       <Stats
                         style={{
@@ -274,8 +235,8 @@ export const ProjectsPage = () => {
                         {item.stats}
                       </Stats>
                     }
-                    description={<Description>{item.description}</Description>}
-                    tag={<Tag>{item.tag}</Tag>}
+                    description={<Description>{item.descricao}</Description>}
+                    tag={<Tag>{item.duracao}</Tag>}
                   />
                 </ProjectWrapper>
                 <Popup2 trigger={projectPopup} toggle={() => setProjetctPopup(!projectPopup)}>
