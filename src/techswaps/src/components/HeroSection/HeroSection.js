@@ -10,53 +10,46 @@ import Masthead from '../MastHead';
 
 
 const HeroSection = () => {
-    const [isOpen, setOpen] = useState(false)
-    //console.log("isOpen", isOpen)
+    const [isOpen, setOpen] = useState(false);
+    // console.log("isOpen", isOpen);
     return (
-
         <>
-
-                <Container>
-                    <Texto>
-                        <Titulo>Bem-vindo(a) ao TechSwaps</Titulo>
-                        <Subtitulo>Participe do desenvolvimento de grandes ideias dentro da Dell.</Subtitulo>
-                    </Texto>
-                    <Imagem src={image} alt="Imagem" />
-                </Container>
-                <Container>
-                    <Imagem2 src={consultImg} alt="Imagem" />
-                    <Texto>
-                        <Titulo>Sobre o TechSwaps</Titulo>
-                        <Subtitulo>A plataforma visa ajudar profissionais a ampliar suas habilidades e conhecimentos, ao mesmo tempo em que ajuda projetos temporários a encontrar profissionais capacitados e interessados em aprender.</Subtitulo>
-                    </Texto>
-                </Container>
-                <Container>
-                    <Texto>
-                        <Titulo>Escolha o que você irá aprender!</Titulo>
-                        <Subtitulo>Podendo ser como shadow ou como tecnico, você poderá escolher a área e o modelo que irá aprender!</Subtitulo>
-                        <StyledButton>Seja Shadow</StyledButton>
-                        <StyledButtonDark>Seja Técnico</StyledButtonDark>
-
-
-
-                    </Texto>
-                    <Imagem3 src={meetImg} alt="Imagem" />
-                </Container>
-                <Container>
-                    <Imagem4 src={blueMeet} alt="Imagem" />
-                </Container>
-                <Container>
-                    <Imagem5 src={dados} alt="Imagem" />
-                    <Texto>
-                        <Titulo>Cadastre projetos em andamento</Titulo>
-                        <Subtitulo>Cadastre um projeto e agregue uma pessoa com a visão de fora ao seu time. Além disso, incentiva a criação de uma rede de contatos entre os profissionais de TI, facilitando futuros aprendizados e projetos. </Subtitulo>
-                        <StyledButton>Proponha um projeto</StyledButton>
-
-
-                    </Texto>
-                </Container>
-
+            <Container>
+                <Texto>
+                    <Titulo>Welcome to TechSwaps</Titulo>
+                    <Subtitulo>Join the development of great ideas within Dell.</Subtitulo>
+                </Texto>
+                <Imagem src={image} alt="Image" />
+            </Container>
+            <Container>
+                <Imagem2 src={consultImg} alt="Image" />
+                <Texto>
+                    <Titulo>About TechSwaps</Titulo>
+                    <Subtitulo>The platform aims to help professionals expand their skills and knowledge, while also helping temporary projects find skilled professionals interested in learning.</Subtitulo>
+                </Texto>
+            </Container>
+            <Container>
+                <Texto>
+                    <Titulo>Choose what you will learn!</Titulo>
+                    <Subtitulo>Whether as a shadow or as a technician, you can choose the area and model you will learn!</Subtitulo>
+                    <StyledButton>Be a Shadow</StyledButton>
+                    <StyledButtonDark>Be a Technician</StyledButtonDark>
+                </Texto>
+                <Imagem3 src={meetImg} alt="Image" />
+            </Container>
+            <Container>
+                <Imagem4 src={blueMeet} alt="Image" />
+            </Container>
+            <Container>
+                <Imagem5 src={dados} alt="Image" />
+                <Texto>
+                    <Titulo>Register ongoing projects</Titulo>
+                    <Subtitulo>Register a project and add someone with an outside perspective to your team. In addition, it encourages the creation of a network of contacts among IT professionals, facilitating future learning and projects.</Subtitulo>
+                    <StyledButton>Propose a Project</StyledButton>
+                </Texto>
+            </Container>
         </>
-    )
-}
+    );
+};
+
 export default HeroSection;

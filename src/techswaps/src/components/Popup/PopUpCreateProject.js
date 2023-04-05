@@ -10,7 +10,7 @@ function Popup(props) {
     return (props.trigger) ? (
         <div className="popuprince">
             <div className="popupInner">
-                <button className="closeButton" onClick={props.toggle}>X</button>
+                <button className="closeButton" onClick={props.toggle}>Close</button>
                 {props.children}
             </div>
         </div>

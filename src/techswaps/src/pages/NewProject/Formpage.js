@@ -7,6 +7,7 @@ const FormPage = () => {
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
   const [coOwner, setCoOwner] = useState("");
+  const [area, setArea] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
@@ -49,12 +50,13 @@ const FormPage = () => {
     setDescription("");
     setTags([]);
     setCoOwner("");
+    setArea("");
     setStartDate("");
     setEndDate("");
   };
   return (
     <>
-      
+
       <h1 className="textblack">Create a new project</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group"></div>
@@ -100,6 +102,17 @@ const FormPage = () => {
             onChange={(event) => setCoOwner(event.target.value)}
           />
         </div>
+        <div className="form-group">
+          <label htmlFor="area" className="textblack">Project area:</label>
+          <input
+            type="text"
+            id="area"
+            name="area"
+            className="textSmallInput"
+            value={coOwner}
+            onChange={(event) => setArea(event.target.value)}
+          />
+        </div>
         <div className="textSmallInput">
           <div className="form-group">
             <label htmlFor="startDate">Data de Início:</label>
@@ -125,13 +138,6 @@ const FormPage = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="buttonAll"
-          onClick={handleOnClick}
-        >
-          Adicionar Projeto
-        </button>
         <button
           type="submit"
           className="buttonAll"
