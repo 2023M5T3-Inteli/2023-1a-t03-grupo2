@@ -13,6 +13,7 @@ import { ProjectsPage } from '../pages/ProjectsPage';
 import HeroSection from './HeroSection/HeroSection';
 import ProfilePage from '../pages/ProfilePage/profilePage';
 import Reconhecimento from '../pages/Reconhecimento';
+import MainPage from '../pages/FAQ - Page/FaqPage';
 
 
 const TabContainer = styled(Tabs)`
@@ -62,14 +63,16 @@ export default function Masthead() {
               <Tab label="Projects" id="tab-1" />
               <Tab label="Reconhecimento" id="tab-2" />
               <Tab label="Profile" id="tab-3" />
+              <Tab label="FAQ" id="tab-4" />
             </TabContainer>
-            <CustomButton >Profile</CustomButton>
+            <CustomButton >Edit Profile</CustomButton>
           </Toolbar>
         </MastheadWrapper>
         {selectedTab === 0 && <HeroSection />}
         {selectedTab === 1 && <ProjectsPage />}
         {selectedTab === 2 && <Reconhecimento />}
         {selectedTab === 3 && <ProfilePage />}
+        {selectedTab === 4 && <MainPage />}
       </AppBar>
 
     </>

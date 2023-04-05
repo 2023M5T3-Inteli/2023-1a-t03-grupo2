@@ -4,10 +4,12 @@ import HomeNavbar from "../components/Navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Popup from "../components/Popup/PopUpCreateProject";
+import Popup2 from "../components/Popup/PopUpDetails";
 import FormPage from "./NewProject/Formpage";
 import SearchIcon from "@mui/icons-material/Search";
 import MastHead from "../components/MastHead";
 import { HeroContainer } from "../components/HeroSection/HeroElements";
+import { ProjectDetails } from "../components/ProjectDetail/projectDetails";
 
 const PageContainer = styled.div`
   position: absolute;
@@ -210,12 +212,16 @@ export const ProjectsPage = () => {
 
   const [buttonPopup, setButtonPopup] = useState(false);
 
+  const [projectPopup, setProjetctPopup] = useState(false);
+
   useEffect(() => {
     axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
     });
   }, []);
   console.log(projetos);
+
+
   return (
     <>
       <HeroContainer>
@@ -245,7 +251,7 @@ export const ProjectsPage = () => {
           {projects.map((item) => {
             return (
               <>
-                <ProjectWrapper>
+                <ProjectWrapper onClick={() => setProjetctPopup(true)}>
                   <ProjectCard
                     title={<Title>{item.title}</Title>}
                     stats={
@@ -272,6 +278,11 @@ export const ProjectsPage = () => {
                     tag={<Tag>{item.tag}</Tag>}
                   />
                 </ProjectWrapper>
+                <Popup2 trigger={projectPopup} toggle={() => setProjetctPopup(!projectPopup)}>
+                  <primeiroplano>
+                    <ProjectDetails />
+                  </primeiroplano>
+                </Popup2>
               </>
             );
           })}
