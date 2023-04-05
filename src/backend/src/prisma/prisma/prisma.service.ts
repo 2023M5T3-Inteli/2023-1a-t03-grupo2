@@ -24,10 +24,12 @@ export class PrismaService {
     try{
     const newProjeto = await this.prisma.projeto.create({
         data: {
-          duracao: data.duracao,
-          descricao: data.descricao,
-          emailGestor: data.emailGestor,
-          nome: data.nome
+          title: data.title,
+          description: data.description,
+          tags: data.tags,
+          coowner: data.coowner,
+          startdate: data.startdate,
+          enddate: data.enddate
         }
       })
     return newProjeto
@@ -49,19 +51,20 @@ export class PrismaService {
   })
   return deletedProjeto
 }
-
-
   async getUsers() {
   const users = await this.prisma.user.findMany()
   return users
 }
 
   async createUser(userData: IUser): Promise<IUser> {
-  try{const newUser = await this.prisma.user.create({
+  try{
+    const newUser = await this.prisma.user.create({
     data: {
-      nome: userData.nome,
-      habilidades: userData.habilidades,
-      areaAtuacao: userData.areaAtuacao
+      name: userData.name,
+      email: userData.email,
+      phone: userData.phone,
+      atuationarea: userData.atuationarea,
+      address: userData.address
     }
   })
   return newUser
@@ -69,16 +72,16 @@ export class PrismaService {
   console.log(err)
 }
 }
-  async updateUser(idFuncionario, userData) {
+  async updateUser(id, userData) {
   const updatedUser = await this.prisma.user.update({
-    where: { idFuncionario },
+    where: { id },
     data: userData
   })
   return updatedUser
 }
-  async deleteUser(idFuncionario) {
+  async deleteUser(id) {
   const deletedUser = await this.prisma.user.delete({
-    where: { idFuncionario }
+    where: { id }
   })
   return deletedUser
 }

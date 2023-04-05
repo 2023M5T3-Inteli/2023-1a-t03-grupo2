@@ -11,6 +11,7 @@ const FormPage = () => {
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
 
+  console.log(startDate)
   useEffect(() => {
     fetch('http://localhost:3001/projeto')
       .then((response) => response.json())

@@ -1,7 +1,9 @@
 export interface IProjeto{
     id?: number;
-    descricao: string;
-    duracao: string;
-    emailGestor: string;
-    nome: string;
+    title: string;
+    description: string;
+    tags: string;
+    coowner: string;
+    startdate: string;
+    enddate: string;
 }
