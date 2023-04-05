@@ -1,7 +1,5 @@
-import { Grid, Paper } from '@mui/material'
 import React, { useState } from 'react';
 import { HeroBg, HeroContainer, homeOne, Container, Texto, Titulo, Subtitulo, Imagem, Imagem2, Imagem3, Imagem4, Imagem5, StyledButton, StyledButtonDark, SearchInput } from './HeroElements'
-import { experimentalStyled as styled } from '@mui/material/styles';
 import image from '../HeroSection/img/techswapsblue.png'
 import consultImg from '../HeroSection/img/consultImg.png'
 import meetImg from '../HeroSection/img/meet2.png'

@@ -69,7 +69,7 @@ const Title = (props) => {
       <IconButton sx={{ p: 0 }} onClick={handleExpand}>
         <Chevron></Chevron>
       </IconButton>
-      <Typography variant="h5" sx={{ mb: 2 }}>
+      <Typography variant="h5" sx={{ mb: 2, color: "black"}}>
         {props.title}
       </Typography>
       <Collapse in={expanded}>

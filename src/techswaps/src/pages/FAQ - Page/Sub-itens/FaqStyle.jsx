@@ -3,9 +3,7 @@
 import styled from 'styled-components';
 
 export const HeroContainer = styled.div`
-    //background: #F5F6F7;
-    //background-color: rgba(217, 217, 217, 0); 
-    background: linear-gradient(180deg, #DAF5FD 0%, rgba(217, 217, 217, 0) 200px);
+    background: #F5F6F7;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,6 +14,8 @@ export const HeroContainer = styled.div`
     margin-left: 15%;
     margin-right: 15%;
     margin-top: 5%;
+    font-family: "Roboto", sans-serif;
+    margin-bottom: 60px;
 `
 export const HeroBg = styled.div`
     position:absolute;
@@ -26,6 +26,4 @@ export const HeroBg = styled.div`
     width:100%;
     height:100%;
     overflow: hidden;
-    margin-left: 5%;
-    margin-right: 10%;
 `
