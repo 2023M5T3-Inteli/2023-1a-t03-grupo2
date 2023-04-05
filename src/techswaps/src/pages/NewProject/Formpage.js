@@ -14,6 +14,7 @@ const FormPage = () => {
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
   const [coOwner, setCoOwner] = useState("");
+  const [area, setArea] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
@@ -59,6 +60,7 @@ const FormPage = () => {
     setDescription("");
     setTags([]);
     setCoOwner("");
+    setArea("");
     setStartDate("");
     setEndDate("");
   };
@@ -109,6 +111,17 @@ const FormPage = () => {
             className="textSmallInput"
             value={coOwner}
             onChange={(event) => setCoOwner(event.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="area" className="textblack">Co-Owner:</label>
+          <input
+            type="text"
+            id="area"
+            name="area"
+            className="textSmallInput"
+            value={coOwner}
+            onChange={(event) => setArea(event.target.value)}
           />
         </div>
         <div className="textSmallInput">

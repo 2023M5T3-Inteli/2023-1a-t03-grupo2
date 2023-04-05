@@ -228,10 +228,10 @@ export const ProjectsPage = () => {
         <PageContainer>
 
           <TitleWrapper>
-            <div>Explore os projetos disponíveis</div>
+            <div>Explore the available projects</div>
           </TitleWrapper>
           <SearchInput>
-            <input placeholder="Pesquise projetos"></input>
+            <input placeholder="Search for projects"></input>
             <SearchIcon />
             <select placeholder="Filtrar por">
               <option value="opcao0"></option>

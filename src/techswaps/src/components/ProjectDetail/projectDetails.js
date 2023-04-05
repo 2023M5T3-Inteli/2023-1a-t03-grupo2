@@ -124,7 +124,11 @@ export const ProjectDetails = () => {
                         <Text>Details</Text>
                         <DetailsBox>
                             <DetailsAgroup>
-                                <BlueTextDetails>Autor:</BlueTextDetails>
+                                <BlueTextDetails>Owner:</BlueTextDetails>
+                                <TextDetails>Joao Antonio</TextDetails>
+                            </DetailsAgroup>
+                            <DetailsAgroup>
+                                <BlueTextDetails>Co-owner:</BlueTextDetails>
                                 <TextDetails>Joao Antonio</TextDetails>
                             </DetailsAgroup>
                             <DetailsAgroup>
