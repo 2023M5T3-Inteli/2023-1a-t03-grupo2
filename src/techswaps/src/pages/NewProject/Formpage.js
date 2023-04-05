@@ -56,7 +56,7 @@ const FormPage = () => {
   };
   return (
     <>
-      
+
       <h1 className="textblack">Create a new project</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group"></div>
@@ -103,7 +103,7 @@ const FormPage = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="area" className="textblack">Co-Owner:</label>
+          <label htmlFor="area" className="textblack">Project area:</label>
           <input
             type="text"
             id="area"
@@ -138,13 +138,6 @@ const FormPage = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="buttonAll"
-          onClick={handleOnClick}
-        >
-          Adicionar Projeto
-        </button>
         <button
           type="submit"
           className="buttonAll"
