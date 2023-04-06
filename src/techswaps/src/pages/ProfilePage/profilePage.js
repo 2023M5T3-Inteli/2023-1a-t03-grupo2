@@ -25,7 +25,9 @@ import {
   Language as LanguageIcon,
 } from '@mui/icons-material';
 import axios from 'axios';
-
+import Complete10 from "../ProfilePage/img/Complete10.png"
+import HardWorker from "../ProfilePage/img/HardWorker.png"
+import styled from 'styled-components';
 
 
 
@@ -45,6 +47,17 @@ export default function ProfilePage() {
   }, []);
   console.log(data)
 
+  const ProfileImages = styled.img`
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+  `;
+
+  const ImagesContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
 
 
   return (
@@ -64,7 +77,7 @@ export default function ProfilePage() {
                   Full Stack Developer
                 </Typography>
                 <Typography color="textSecondary" gutterBottom>
-                  Bay Area, San Francisco, CA
+                  Rio de Janeiro - RJ
                 </Typography>
                 <Box mt={2}>
                   <Button variant="contained" color="primary">
@@ -74,6 +87,12 @@ export default function ProfilePage() {
                     Message
                   </Button>
                 </Box>
+                <ImagesContainer>
+                  <ProfileImages src={Complete10} />
+
+                  <ProfileImages src={HardWorker} />
+
+                </ImagesContainer>
               </CardContent>
             </Card>
 
@@ -85,31 +104,31 @@ export default function ProfilePage() {
                     <ListItemIcon>
                       <LanguageIcon color="warning" />
                     </ListItemIcon>
-                    <ListItemText primary="https://mdbootstrap.com" />
+                    <ListItemText primary="https://inteli.edu.br" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
                       <GitHubIcon />
                     </ListItemIcon>
-                    <ListItemText primary="mdbootstrap" />
+                    <ListItemText primary="xandebrabe" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
                       <TwitterIcon sx={{ color: '#55acee' }} />
                     </ListItemIcon>
-                    <ListItemText primary="@mdbootstrap" />
+                    <ListItemText primary="@xandao" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
                       <InstagramIcon sx={{ color: '#ac2bac' }} />
                     </ListItemIcon>
-                    <ListItemText primary="mdbootstrap" />
+                    <ListItemText primary="xande" />
                   </ListItem>
                   <ListItem>
                     <ListItemIcon>
                       <FacebookIcon sx={{ color: '#3b5998' }} />
                     </ListItemIcon>
-                    <ListItemText primary="mdbootstrap" />
+                    <ListItemText primary="xande" />
                   </ListItem>
                 </List>
               </CardContent>
@@ -124,7 +143,7 @@ export default function ProfilePage() {
                   </Grid>
                   <Grid item xs={12} sm={9}>
                     <Typography variant="subtitle2" color="textSecondary">
-                    {data.name}
+                      Alexandre Fonseca
                     </Typography>
                   </Grid>
                 </Grid>
@@ -135,7 +154,7 @@ export default function ProfilePage() {
                   </Grid>
                   <Grid item xs={12} sm={9}>
                     <Typography variant="subtitle2" color="textSecondary">
-                    {data.email}
+                      alexandre.fonseca@sou.inteli.edu
                     </Typography>
                   </Grid>
                 </Grid>
@@ -146,18 +165,7 @@ export default function ProfilePage() {
                   </Grid>
                   <Grid item xs={12} sm={9}>
                     <Typography variant="subtitle2" color="textSecondary">
-                      (097) 234-5678
-                    </Typography>
-                  </Grid>
-                </Grid>
-                <hr />
-                <Grid container>
-                  <Grid item xs={12} sm={3}>
-                    <Typography>Mobile</Typography>
-                  </Grid>
-                  <Grid item xs={12} sm={9}>
-                    <Typography variant="subtitle2" color="textSecondary">
-                      (098) 765-4321
+                      +55 (11)99952-2342
                     </Typography>
                   </Grid>
                 </Grid>
@@ -168,7 +176,7 @@ export default function ProfilePage() {
                   </Grid>
                   <Grid item xs={12} sm={9}>
                     <Typography variant="subtitle2" color="textSecondary">
-                      Bay Area, San Francisco, CA
+                      Rio de Janeiro - RJ
                     </Typography>
                   </Grid>
                 </Grid>
