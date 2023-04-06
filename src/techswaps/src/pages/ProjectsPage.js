@@ -180,7 +180,6 @@ export const ProjectsPage = () => {
       setProjeto(response.data);
     });
   }, []);
-  console.log(projetos)
 
   return (
     <>
@@ -212,7 +211,7 @@ export const ProjectsPage = () => {
               <>
                 <ProjectWrapper onClick={() => setProjetctPopup(true)}>
                   <ProjectCard
-                    title={<Title>{item.nome}</Title>}
+                    title={<Title>{item.title}</Title>}
                     stats={
                       <Stats
                         style={{
@@ -233,8 +232,8 @@ export const ProjectsPage = () => {
                         {item.stats}
                       </Stats>
                     }
-                    description={<Description>{item.descricao}</Description>}
-                    tag={<Tag>{item.duracao}</Tag>}
+                    description={<Description>{item.description}</Description>}
+                    tag={<Tag>{item.tags}</Tag>}
                   />
                 </ProjectWrapper>
                 <Popup2 trigger={projectPopup} toggle={() => setProjetctPopup(!projectPopup)}>

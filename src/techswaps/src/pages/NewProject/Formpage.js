@@ -11,8 +11,6 @@ const FormPage = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
-
-  console.log(startDate)
   useEffect(() => {
     fetch('http://localhost:3001/projeto')
       .then((response) => response.json())
@@ -34,10 +32,12 @@ const FormPage = () => {
     event.preventDefault();
     try {
       await axios.post('http://localhost:3000/projeto/criar', {
-        nome: title,
-        descricao: description,
-        duracao: title,
-        emailGestor: coOwner
+        title: title,
+        description: description,
+        tags: title,
+        coowner: coOwner,
+        startdate: startDate,
+        enddate: endDate
       })
     } catch (error) {
       console.log(error)
