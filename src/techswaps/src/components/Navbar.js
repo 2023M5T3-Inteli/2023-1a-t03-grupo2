@@ -31,7 +31,7 @@ export default function HomeNavbar() {
               sx={{ marginLeft: "16px" }}
             />
             <Typography variant="p" color="#636363" sx={{ marginLeft: "8px" }}>
-              Nome do Usuário
+              Alexandre Fonseca
             </Typography>
           </div>
         </Toolbar>

@@ -55,18 +55,16 @@ export default function Masthead() {
             <TabContainer value={selectedTab} onChange={handleTabChange}>
               <Tab label="Home" id="tab-0" />
               <Tab label="Projects" id="tab-1" />
-              <Tab label="Reconhecimento" id="tab-2" />
-              <Tab label="Profile" id="tab-3" />
-              <Tab label="FAQ" id="tab-4" />
+              <Tab label="Profile" id="tab-2" />
+              <Tab label="FAQ" id="tab-3" />
             </TabContainer>
             <CustomButton >Edit Profile</CustomButton>
           </Toolbar>
         </MastheadWrapper>
         {selectedTab === 0 && <HeroSection />}
         {selectedTab === 1 && <ProjectsPage />}
-        {selectedTab === 2 && <Reconhecimento />}
-        {selectedTab === 3 && <ProfilePage />}
-        {selectedTab === 4 && <MainPage />}
+        {selectedTab === 2 && <ProfilePage />}
+        {selectedTab === 3 && <MainPage />}
       </AppBar>
 
     </>

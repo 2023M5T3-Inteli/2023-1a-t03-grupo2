@@ -103,7 +103,7 @@ export const ProjectDetails = () => {
 
                 <HeadTop>
                     <ContentLeft>
-                        <Title>Project Title</Title>
+                        <Title>Customer Support Center</Title>
                     </ContentLeft>
                     <ContentRight>
                         <StyledButton>Apply for the project</StyledButton>
@@ -117,7 +117,10 @@ export const ProjectDetails = () => {
                 <ContentDetails>
                     <ContentLeft>
                         <BlueText>Project start date: 22/04/2023</BlueText>
-                        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+                        <Text>Dell Technologies is developing an innovative customer support center with the goal of providing our customers with an exceptional and efficient support experience. The project will be built using the React framework, which will allow for a fast and intuitive user interface, as well as efficient management of the support center.
+We are looking for technology professionals from Dell who have a passion for high-quality software solutions and who wish to be involved in a challenging and rewarding project. If you have experience with React and are looking for an opportunity to apply your skills in a dynamic and collaborative team environment, then this is the perfect opportunity for you.
+As a member of the development team, you will have the chance to work closely with other Dell professionals, including UX designers, product managers, and software engineers, to create a revolutionary customer support solution.
+If you are excited about the opportunity to be part of this project and help improve our customer's experience, submit your application today. We are eager to receive your application and learn more about your skills and experience.</Text>
 
                     </ContentLeft>
                     <ContentRight>
@@ -125,11 +128,11 @@ export const ProjectDetails = () => {
                         <DetailsBox>
                             <DetailsAgroup>
                                 <BlueTextDetails>Owner:</BlueTextDetails>
-                                <TextDetails>Joao Antonio</TextDetails>
+                                <TextDetails>Alexandre Fonseca</TextDetails>
                             </DetailsAgroup>
                             <DetailsAgroup>
                                 <BlueTextDetails>Co-owner:</BlueTextDetails>
-                                <TextDetails>Joao Antonio</TextDetails>
+                                <TextDetails>Matheus Santos</TextDetails>
                             </DetailsAgroup>
                             <DetailsAgroup>
                                 <BlueTextDetails>Project area:</BlueTextDetails>
@@ -137,7 +140,7 @@ export const ProjectDetails = () => {
                             </DetailsAgroup>
                             <DetailsAgroup>
                                 <BlueTextDetails>Delivery date:</BlueTextDetails>
-                                <TextDetails>27/07/2023</TextDetails>
+                                <TextDetails>27/06/2023</TextDetails>
                             </DetailsAgroup>
                             <DetailsAgroup>
                                 <BlueTextDetails>Tags:</BlueTextDetails>
