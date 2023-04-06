@@ -59,6 +59,10 @@ export default function ProfilePage() {
     align-items: center;
   `;
 
+  const ProfileImageOne = styled.div`
+    margin: 15px;
+  `;
+
 
   return (
     <section>
@@ -68,11 +72,13 @@ export default function ProfilePage() {
           <Grid item lg={4}>
             <Card className="mb-4" sx={{ mx: 'auto', margin: 3 }}>
               <CardContent sx={{ textAlign: 'center' }}>
-                <Avatar
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                  alt="avatar"
-                  sx={{ width: 150, height: 150, mx: 'auto', display: 'block' }}
-                />
+                <ProfileImageOne>
+                  <Avatar
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                    alt="avatar"
+                    sx={{ width: 150, height: 150, mx: 'auto', display: 'block' }}
+                  />
+                </ProfileImageOne>
                 <Typography variant="subtitle2" color="textSecondary" gutterBottom>
                   Full Stack Developer
                 </Typography>
