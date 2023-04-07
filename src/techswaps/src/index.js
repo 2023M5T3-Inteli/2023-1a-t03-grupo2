@@ -14,6 +14,7 @@ import ProporProjeto3 from './pages/Propor Projeto - Page/Sub-itens/Propor3';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ProjectsPage } from './pages/ProjectsPage';
 import MainPage from './pages/FAQ - Page/FaqPage';
+import ProfilePage from './pages/ProfilePage/profilePage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,12 +26,13 @@ root.render(
         <Route index element={<Home />} />
         <Route path="login" element={<Login />} />
         <Route path="cadastro" element={<FormPage />} />
-        <Route path="projetos" element={<ProjectsPage  />} />
+        <Route path="projetos" element={<ProjectsPage />} />
         <Route path="reconhecimento" element={<Reconhecimento />} />
         <Route path="faq" element={<MainPage />} />
-        <Route path= "projetos1" element={<ProporProjeto1/>}/>
-        <Route path= "projetos2" element={<ProporProjeto2/>}/>
-        <Route path= "projetos3" element={<ProporProjeto3/>}/>
+        <Route path="projetos1" element={<ProporProjeto1 />} />
+        <Route path="projetos2" element={<ProporProjeto2 />} />
+        <Route path="projetos3" element={<ProporProjeto3 />} />
+        <Route path="profile" element={<ProfilePage/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

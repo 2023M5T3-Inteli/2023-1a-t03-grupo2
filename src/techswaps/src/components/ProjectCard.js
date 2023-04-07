@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 export const projectCard = styled.div`
@@ -14,13 +15,17 @@ export const projectCard = styled.div`
 `;
 
 export const ProjectCard = ({ title, stats, description, tag }) => {
+  const maxChars = 200;
+  const shortDescription = description.length > maxChars ? `${description.substring(0, maxChars)}...` : description;
+
   return (
     <>
       <projectCard>
           <div>
             <p className="font-size: 1em ">{title}</p>
             <p>{stats}</p>
-            <p>{description}</p>
+            <p>{shortDescription}</p>
+            {description.length > maxChars && <a href="#">Ler mais</a>}
             <p>{tag}</p>
           </div>
       </projectCard>

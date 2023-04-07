@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "./Login.css";
 import Logo from "./../Login/techswaps.png";
 import HomeNavbar from "../../components/Navbar";
+import { useHref } from "react-router-dom";
+
+
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -31,6 +35,10 @@ function Login() {
     event.preventDefault();
     // code to handle reset password
   };
+
+  const url = useHref('/');
+
+
 
   return (
 
@@ -63,7 +71,7 @@ function Login() {
                 onChange={(event) => setPassword(event.target.value)}
               />
               <div className="button-container">
-                <button type="submit" className="login-button">
+                <button type="submit" className="login-button" onClick={() => window.location.href = url}>
                   Login
                 </button>
                 <button

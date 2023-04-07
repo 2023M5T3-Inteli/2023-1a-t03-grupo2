@@ -1,15 +1,13 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import { Button, Tab, Tabs, Box } from '@mui/material';
 import styled from '@emotion/styled';
-import Popup from "../components/Popup/PopUpCreateProject";
-import FormPage from '../pages/NewProject/Formpage';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import axios from "axios";
-import { useState, useEffect } from "react";
 import { ProjectsPage } from '../pages/ProjectsPage';
+import HeroSection from './HeroSection/HeroSection';
+import ProfilePage from '../pages/ProfilePage/profilePage';
+import Reconhecimento from '../pages/Reconhecimento';
+import MainPage from '../pages/FAQ - Page/FaqPage';
 
 
 const TabContainer = styled(Tabs)`
@@ -55,14 +53,18 @@ export default function Masthead() {
 
           <Toolbar>
             <TabContainer value={selectedTab} onChange={handleTabChange}>
-              <Tab label="General" id="tab-0" />
+              <Tab label="Home" id="tab-0" />
               <Tab label="Projects" id="tab-1" />
               <Tab label="Profile" id="tab-2" />
-              <Tab label="Recognition" id="tab-3" />
+              <Tab label="FAQ" id="tab-3" />
             </TabContainer>
-            <CustomButton >Profile</CustomButton>
+            <CustomButton >Edit Profile</CustomButton>
           </Toolbar>
         </MastheadWrapper>
+        {selectedTab === 0 && <HeroSection />}
+        {selectedTab === 1 && <ProjectsPage />}
+        {selectedTab === 2 && <ProfilePage />}
+        {selectedTab === 3 && <MainPage />}
       </AppBar>
 
     </>

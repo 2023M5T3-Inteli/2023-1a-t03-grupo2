@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -9,34 +8,39 @@ datasource db {
 }
 
 model estadodesolicitacao {
-  id      Int      @id @default(autoincrement())
-  emailGestor   String   @unique
+  id          Int    @id @default(autoincrement())
+  emailGestor String @unique
 }
 
-model Projeto {
-  id      Int      @id @default(autoincrement())
-  nome    String
-  duracao String
-  descricao String
-  emailGestor String
-}
-
-model User{
-  idFuncionario      Int      @id @default(autoincrement())
-  nome String?
-  habilidades String
-  areaAtuacao String
-}
-
-model Vagas {
-  id  Int @id @default(autoincrement())
-  tipoVaga String
-  descricao String
-}
-model usuarios{
-  id Int @id @default(autoincrement())
-  nome String
-  email String @unique
-  phone Int
+model usuarios {
+  id              Int    @id @default(autoincrement())
+  nome            String
+  email           String @unique
+  phone           Int
   data_nascimento String
+}
+
+model projeto {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  tags        String
+  coowner     String
+  startdate   String
+  enddate     String
+}
+
+model user {
+  id           Int    @id @default(autoincrement())
+  address      String
+  atuationarea String
+  email        String
+  name         String
+  phone        String
+}
+
+model vagas {
+  id        Int    @id @default(autoincrement())
+  tipoVaga  String
+  descricao String
 }

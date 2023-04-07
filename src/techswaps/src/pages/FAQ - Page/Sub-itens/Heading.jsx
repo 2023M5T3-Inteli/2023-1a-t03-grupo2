@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 const Heading = () => {
   return (
-    <PageContainer>
+
       <PageTitle>Frequently Asked Questions</PageTitle>
-      {/* O H1 acima */}
-    </PageContainer>
+
+
   )
   
 };
@@ -25,6 +25,7 @@ const PageTitle = styled.h1`
   text-align: start;
   margin-bottom: 20px;
   font-family: 'Roboto', sans-serif;
+  color: black;
   `;
 
 

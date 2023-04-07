@@ -1,13 +1,13 @@
 import { ProjectCard } from "../components/ProjectCard";
 import styled from "styled-components";
-import HomeNavbar from "../components/Navbar";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Popup from "../components/Popup/PopUpCreateProject";
+import Popup2 from "../components/Popup/PopUpDetails";
 import FormPage from "./NewProject/Formpage";
 import SearchIcon from "@mui/icons-material/Search";
-import MastHead from "../components/MastHead";
 import { HeroContainer } from "../components/HeroSection/HeroElements";
+import { ProjectDetails } from "../components/ProjectDetail/projectDetails";
 
 const PageContainer = styled.div`
   position: absolute;
@@ -18,9 +18,10 @@ const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
-
-const ContentProject = styled.div``;
 
 const ProjectWrapper = styled.div`
   border-radius: 10px;
@@ -41,11 +42,12 @@ const ProjectWrapper = styled.div`
 `;
 
 const TitleWrapper = styled.div`
-  margin-top: 80px;
+  margin-top: 10px;
   margin-bottom: 40px;
   padding: 10px;
   text-align: left;
   font-size: 1.5rem;
+  color: #000
 `;
 
 const SearchInput = styled.div`
@@ -55,6 +57,7 @@ const SearchInput = styled.div`
   height: 50px;
   border-radius: 10px;
   position: relative;
+  
 
   input {
     width: 70%;
@@ -97,6 +100,7 @@ const Title = styled.h2`
   font-size: 1.5rem;
   margin: 0.4rem;
   padding: 0;
+  color: #000
 `;
 
 const Stats = styled.h3`
@@ -107,6 +111,7 @@ const Stats = styled.h3`
   display: inline-block;
   border: 2px solid;
   border-radius: 5px;
+    color: #000
   ${(props) =>
     props.status === "In progress" &&
     `
@@ -146,6 +151,7 @@ const Description = styled.div`
   margin-left: 10px;
   margin: 0.4rem;
   padding: 0;
+  color: #000
 `;
 
 const Tag = styled.div`
@@ -160,66 +166,31 @@ const Tag = styled.div`
   box-sizing: border-box;
 `;
 
-const ContentProjectPage = styled.div`
-  display: flex;
-
-  justify-content: center;
-  
-`;
-
-const primeiroplano = styled.div`
-  position: fixed;
-  z-index: 9999;
-`;
-
-const baseUrl = "http://localhost:3001/";
+const baseUrl = "http://localhost:3000/";
 
 export const ProjectsPage = () => {
-  const [projetos, setProjeto] = useState(null);
-  //const [buttonPopup, setButtonPopup] = useState(false);
-
-
-  const projects = [
-    {
-      title: "Lightining",
-      stats: "In progress",
-      description: "Lorem impsu",
-      tag: "python",
-    },
-    {
-      title: "Lightining",
-      stats: "In progress",
-      description: "Lorem impsu",
-      tag: "python",
-    },
-    {
-      title: "Lightining",
-      stats: "Recruiting",
-      description: "Lorem impsu",
-      tag: "python",
-    },
-  ];
+  const [projetos, setProjeto] = useState([]);
 
   const [buttonPopup, setButtonPopup] = useState(false);
+
+  const [projectPopup, setProjetctPopup] = useState(false);
 
   useEffect(() => {
     axios.get(baseUrl + "projeto").then((response) => {
       setProjeto(response.data);
     });
   }, []);
-  console.log(projetos);
+  console.log(projetos)
+
   return (
     <>
-      <HomeNavbar></HomeNavbar>
       <HeroContainer>
         <PageContainer>
-          <MastHead />
-
           <TitleWrapper>
-            <div>Explore os projetos disponíveis</div>
+            <div>Explore the available projects</div>
           </TitleWrapper>
           <SearchInput>
-            <input placeholder="Pesquise projetos"></input>
+            <input placeholder="Search for projects"></input>
             <SearchIcon />
             <select placeholder="Filtrar por">
               <option value="opcao0"></option>
@@ -236,12 +207,12 @@ export const ProjectsPage = () => {
               <FormPage></FormPage>
             </primeiroplano>
           </Popup>
-          {projects.map((item) => {
+          {projetos.map((item) => {
             return (
               <>
-                <ProjectWrapper>
+                <ProjectWrapper onClick={() => setProjetctPopup(true)}>
                   <ProjectCard
-                    title={<Title>{item.title}</Title>}
+                    title={<Title>{item.nome}</Title>}
                     stats={
                       <Stats
                         style={{
@@ -262,68 +233,20 @@ export const ProjectsPage = () => {
                         {item.stats}
                       </Stats>
                     }
-                    description={<Description>{item.description}</Description>}
-                    tag={<Tag>{item.tag}</Tag>}
+                    description={<Description>{item.descricao}</Description>}
+                    tag={<Tag>{item.duracao}</Tag>}
                   />
                 </ProjectWrapper>
+                <Popup2 trigger={projectPopup} toggle={() => setProjetctPopup(!projectPopup)}>
+                  <primeiroplano>
+                    <ProjectDetails />
+                  </primeiroplano>
+                </Popup2>
               </>
             );
           })}
         </PageContainer>
       </HeroContainer>
-      <PageContainer>
-        <MastHead />
-        <TitleWrapper>
-          <div>Explore os projetos disponíveis</div>
-        </TitleWrapper>
-        <SearchInput>
-          <input placeholder="Pesquise projetos"></input>
-          <SearchIcon />
-          <select placeholder="Filtrar por">
-            <option value="opcao0"></option>
-            <option value="opcao1">React</option>
-            <option value="opcao2">Java</option>
-            <option value="opcao3">UX Design</option>
-          </select>
-        </SearchInput>
-        <StyledButton onClick={() => setButtonPopup(true)}>Add project</StyledButton>
-        {projects.map((item) => {
-          return (
-            <>
-              <ProjectWrapper>
-                <ProjectCard
-                  title={<Title>{item.title}</Title>}
-                  stats={
-                    <Stats
-                      style={{
-                        borderColor:
-                          item.stats === "In progress"
-                            ? "orange"
-                            : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
-                        color:
-                          item.stats === "In progress"
-                            ? "orange"
-                            : item.stats === "Recruiting"
-                              ? "green"
-                              : "red",
-                      }}
-                    >
-                      {item.stats}
-                    </Stats>
-                  }
-                  description={<Description>{item.description}</Description>}
-                  tag={<Tag>{item.tag}</Tag>}
-                />
-              </ProjectWrapper>
-            </>
-          );
-        })}
-      </PageContainer>
-      <Popup trigger={buttonPopup}>
-        <FormPage></FormPage>
-      </Popup>
     </>
   );
 };

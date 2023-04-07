@@ -6,7 +6,7 @@ export const HeroContainer = styled.div`
     justify-content: center;
     align-items: center;
     padding: 0 30px;
-    height: 1600px;
+    height: 2500px;
     position: relative;
     z-index: 1;
     margin-left: 15%;
@@ -89,6 +89,7 @@ export const Imagem5 = styled.img`
 export const Texto = styled.div`
   flex: 1;
   margin-left: 20px;
+  color: #000
 
 `;
 

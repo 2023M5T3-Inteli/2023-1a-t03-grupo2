@@ -1,26 +1,18 @@
 import React, { useState, useEffect } from "react";
-import HomeNavbar from "../../components/Navbar";
 import axios from "axios";
 import "./FormPage.css"; //importando o arquivo CSS para personalização
-import styled from 'styled-components'
-
-
-
-
-
 
 const FormPage = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [tags, setTags] = useState([]);
   const [coOwner, setCoOwner] = useState("");
+  const [area, setArea] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [projeto, setProjeto] = useState([]);
-  const [formData, setFormData] = useState({
-    title: '',
-    body: ''
-  });
+
+  console.log(startDate)
   useEffect(() => {
     fetch('http://localhost:3001/projeto')
       .then((response) => response.json())
@@ -41,11 +33,11 @@ const FormPage = () => {
   const handleOnClick = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/projeto/criar', {
-        nome: "Hello World!",
-        descricao: "This is a new post.",
-        duracao: "5 anos",
-        emailGestor: "Helloworld@gmail.com"
+      await axios.post('http://localhost:3000/projeto/criar', {
+        nome: title,
+        descricao: description,
+        duracao: title,
+        emailGestor: coOwner
       })
     } catch (error) {
       console.log(error)
@@ -59,14 +51,14 @@ const FormPage = () => {
     setDescription("");
     setTags([]);
     setCoOwner("");
+    setArea("");
     setStartDate("");
     setEndDate("");
   };
-  console.log(projeto)
   return (
     <>
-    
-      <h1>Create a new project</h1>
+
+      <h1 className="textblack">Create a new project</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group"></div>
         <label className="titleForm" htmlFor="title">Title of the project:</label>
@@ -79,7 +71,7 @@ const FormPage = () => {
           onChange={(event) => setTitle(event.target.value)}
         />
         <div className="form-group">
-          <label htmlFor="description">Descrição:</label>
+          <label htmlFor="description" className="textblack">Descrição:</label>
           <textarea
             id="description"
             name="description"
@@ -89,7 +81,7 @@ const FormPage = () => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="tags">Tags:</label>
+          <label htmlFor="tags" className="textblack">Tags:</label>
           <form onSubmit={handleAddTag} className="textSmallInput">
             <input type="text" id="tag" name="tag" className="textSmallInput" />
             <button type="submit" id="tag" className="buttonAll" > Adicionar Tag</button>
@@ -101,7 +93,7 @@ const FormPage = () => {
           </ul>
         </div>
         <div className="form-group">
-          <label htmlFor="coOwner">Co-Owner:</label>
+          <label htmlFor="coOwner" className="textblack">Co-Owner:</label>
           <input
             type="text"
             id="coOwner"
@@ -109,6 +101,17 @@ const FormPage = () => {
             className="textSmallInput"
             value={coOwner}
             onChange={(event) => setCoOwner(event.target.value)}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="area" className="textblack">Project area:</label>
+          <input
+            type="text"
+            id="area"
+            name="area"
+            className="textSmallInput"
+            value={coOwner}
+            onChange={(event) => setArea(event.target.value)}
           />
         </div>
         <div className="textSmallInput">
@@ -154,7 +157,7 @@ const FormPage = () => {
           </>
         );
       })}
-  
+
     </>
   );
 };

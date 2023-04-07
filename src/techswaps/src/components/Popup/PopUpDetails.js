@@ -1,11 +1,8 @@
-* {
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 400;
-}
+import React from "react";
+import styled from "styled-components";
 
 
-
-.popuprince {
+const Popupprince = styled.div`
     position: fixed;
     top: 0;
     left:0;
@@ -15,21 +12,16 @@
     display:flex;
     justify-content: center;
     align-items:center;
-}
+`;
 
-.form-page {
-    color: black;
-  }
-  
-.popupInner {
+const PopupInner = styled.div`
     position: relative;
     padding: 32px;
-    width: 100%;
-    max-width: 640px;
+    width: 60%;
     background-color: #fff;
-}
+`;
 
-.closeButton {
+const CloseButton = styled.button`
     position: absolute;
     top: 16px;
     right: 16px;
@@ -44,4 +36,17 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+`;
+
+function Popup2(props) {
+    return (props.trigger) ? (
+        <Popupprince>
+            <PopupInner>
+                <CloseButton onClick={props.toggle}>Close</CloseButton>
+                { props.children }
+            </PopupInner>
+        </Popupprince>
+    ) : "";
 }
+
+export default Popup2;

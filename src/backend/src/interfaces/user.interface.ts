@@ -1,5 +1,8 @@
 export interface IUser{
-    areaAtuacao: string;
-    habilidades: string;
-    nome: string;
+    id?: number;
+    name: string;
+    email: string;
+    phone: string;
+    atuationarea: string;
+    address: string;
 }
