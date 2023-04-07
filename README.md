@@ -36,7 +36,7 @@ Criação de um portal de aprendizado: Centralizando todas as oportunidades de p
 📂 2023-1a-t03-grupo2
 |<br>
 -->📂 documentos <br>
-  &emsp;📄Cloud Application Document<br>
+  &emsp;📄Documento de Testes<br>
 -->📂 src
   &emsp;📂 backend <br>
   &emsp;&emsp;📂 prisma <br>
