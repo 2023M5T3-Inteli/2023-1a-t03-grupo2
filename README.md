@@ -23,7 +23,7 @@
 📜 Descrição curta sobre o que seu projeto faz.
 O projeto TechSwaps é uma iniciativa que tem como finalidade realizar a conexão de profissionais da Dell que desejam aprender novas habilidades com oportunidades de projetos temporários em diferentes tecnologias. O TechSwaps é um portal em que as oportunidades ofertadas dentro da Dell estarão centralizadas, permitindo que os funcionários da Dell acessem as vagas livres e obtenham mais informações sobre elas. Com isso, espera-se difundir o aprendizado em diferentes tecnologias e áreas, e também ajudar na retenção de talentos dentro da empresa, reduzindo assim o turnover.
 
-💡 SObre a solução:
+💡 Sobre a solução:
 <br><br>
 Criação de um portal de aprendizado: Centralizando todas as oportunidades de projetos temporários em um único local e disponibilizar essas informações de uma forma acessível para profissionais interessados em aprender novas tecnologias e explorar outras áreas. Dessa forma, iremos conectar demanda e oferta ao desenvolvermos um mecanismo eficiente de conexão entre oportunidades e profissionais interessados, assim, fomentamos o aprendizado e o desenvolvimento profissional dos funcionários Dell incentivando a retenção de talentos e o engajamento do funcionário na empresa. O software visa ser uma ferramenta valiosa para ajudar a reter os talentos da Dell e melhorar o ambiente de trabalho da empresa. 
 <br><br>
