@@ -21,11 +21,11 @@
 ## Descrição
 
 📜 Descrição curta sobre o que seu projeto faz.
-O projeto TechSwaps é uma iniciativa que tem como finalidade realizar a conexão de profissionais de tecnologia que desejam aprender novas habilidades com gestores que disponibilizam oportunidades de projetos temporários em diferentes tecnologias. O TechSwaps é um portal em que as oportunidades ofertadas dentro da Dell estarão centralizadas, permitindo que os funcionários da Dell acessem as vagas livres e obtenham mais informações sobre elas. Com isso, espera-se difundir o aprendizado em diferentes tecnologias e também ajudar na retenção de talentos dentro da empresa, o que reduz o índice de evasão, e ofertando desafios e oportunidades para o aprimoramento de habilidades.
+O projeto TechSwaps é uma iniciativa que tem como finalidade realizar a conexão de profissionais da Dell que desejam aprender novas habilidades com oportunidades de projetos temporários em diferentes tecnologias. O TechSwaps é um portal em que as oportunidades ofertadas dentro da Dell estarão centralizadas, permitindo que os funcionários da Dell acessem as vagas livres e obtenham mais informações sobre elas. Com isso, espera-se difundir o aprendizado em diferentes tecnologias e áreas, e também ajudar na retenção de talentos dentro da empresa, reduzindo assim o turnover.
 
-💡 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+💡 SObre a solução:
 <br><br>
-(inserir)
+Criação de um portal de aprendizado: Centralizando todas as oportunidades de projetos temporários em um único local e disponibilizar essas informações de uma forma acessível para profissionais interessados em aprender novas tecnologias e explorar outras áreas. Dessa forma, iremos conectar demanda e oferta ao desenvolvermos um mecanismo eficiente de conexão entre oportunidades e profissionais interessados, assim, fomentamos o aprendizado e o desenvolvimento profissional dos funcionários Dell incentivando a retenção de talentos e o engajamento do funcionário na empresa. O software visa ser uma ferramenta valiosa para ajudar a reter os talentos da Dell e melhorar o ambiente de trabalho da empresa. 
 <br><br>
 <br><br>
 
@@ -33,45 +33,51 @@ O projeto TechSwaps é uma iniciativa que tem como finalidade realizar a conexã
 
 (inserir quando as pastas estiverem ajustadas)
 
--Raiz<br>
+📂 2023-1a-t03-grupo2
 |<br>
-|-->docs<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|GDD.docx ou Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
-|readme.md<br>
-
-A pasta raiz contem dois arquivos que devem ser alterados:
+-->📂 documentos <br>
+  &emsp;📄Cloud Application Document<br>
+-->📂 src
+  &emsp;📂 backend <br>
+  &emsp;&emsp;📂 prisma <br>
+  &emsp;&emsp;📂 src <br>
+  &emsp;&emsp;📂 test <br>
+  &emsp;📂 techswaps <br>
+  &emsp;&emsp;📂 node_modules <br>
+  &emsp;&emsp;📂 public <br>
+  &emsp;&emsp;📂 src <br>
+  &emsp;&emsp;&emsp;📂 components <br>
+  &emsp;&emsp;&emsp;📂 pages <br>
+readme.md<br>
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
 
-Há também 4 pastas que seguem da seguinte forma:
+## 💻 Configuração para Desenvolvimento
 
-<b>docs</b>: Aqui serão colocados os arquivos compilados em HTML do jogo.
-<b>documentos</b>: Aqui estarão todos os documentos do projeto, mas principalmente o <b>GDD (Game Design Document)/Documentação do Sistema</b>. Há uma pasta <b>antigos</b> onde estarão todas as versões antigas da documentação.
+### Comandos para instalar as dependênciasdo projeto
 
-<b>executáveis</b>: Aqui estarão todos os executáveis do jogo, prontos para rodar. Há no mínimo 3 pastas, uma para binários <b>Windows</b>, uma para binários <b>android</b> e uma para a <b>Web/HTML</b>
+| Tecnologia | Versão | Comando para instalar |
+|:----------|------|---------------------|
+|NPM  |  1.17.3 | ```npm install``` |
+|NodeJS| 12.18.2 | ``` npm install node ``` |
+|React Router| 6.10.0 | ``` npm i react-router-dom ``` |
+|Axios| 1.3.5 | ``` npm i axios ``` |
 
-<b>imagens</b>: Algumas imagens do jogo/sistema e logos prontos para serem utilizados e visualizados.
-
-<b>src</b>: Nesta pasta irá todo o código fonte do jogo/sistema, pronto para para ser baixado e modificado.
-
-## 🛠 Instalação
 
 É necessário executar o comando “npm run build”, com isso, todo o código desenvolvido em React é exportado para arquivos em HTML, JavaScript e CSS. Com os arquivos já prontos, é necessário fazer o upload de todos os arquivos em um Bucket,  Amazon S3. 
 
 Após isso é necessário alterar o permissionamento, adicionando uma licença e deixando aberto para a visualização do público. Assim o site fica publicado no S3, porém apenas o Frontend da aplicação.
 
+## Tecnologias                                
 
-## 💻 Configuração para Desenvolvimento
+<div align="center">
+	<img height="40" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript" />
+	<img height="40" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React" />
+	<img height="40" src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" title="npm" />
+	<img height="40" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js" />
+	<img height="40" src="https://user-images.githubusercontent.com/25181517/183896132-54262f2e-6d98-41e3-8888-e40ab5a17326.png" alt="AWS" title="AWS" />
+</div>
 
-(inserir)
 
 ## 🗃 Histórico de lançamentos
 
